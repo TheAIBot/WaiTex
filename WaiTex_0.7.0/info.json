@@ -1,9 +1,0 @@
-{
-	"name":"WaiTex",
-	"author":"keyboardhack",
-	"version":"0.7.0",
-	"title":"WaiTex",
-	"homepage":"NaN",
-	"description":"HD textures for most vanilla items",
-	"dependencies": ["base >= 0.12.00"]
-}
