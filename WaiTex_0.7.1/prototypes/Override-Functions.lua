@@ -66,8 +66,11 @@ function AllowChange(name, t, doOverride)
 	if doOverride then
 		return true
 	end
+	if TexturePermissions[name] == nil then
+		return false
+	end
 	local tex = TexturePermissions[name]
-	return tex.enabled and (GB1 == false or GB1 == true and tex.GB1 == false) and pcall(IsBaseTexture, t) and  IsBaseTexture(t)
+	return tex.enabled and (GB1 == false or GB1 == true and tex.GB1 == false)
 end
 
 function IsBaseTexture(t)
