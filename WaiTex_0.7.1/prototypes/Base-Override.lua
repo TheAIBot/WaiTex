@@ -16,7 +16,7 @@ ChangeTextureConfiguration =
 	
 	
 	--[[assembling-machine-3]]--
-	["__base__/graphics/entity/assembling-machine-3/assembling-machine-3.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/assembling-machine-3/assembling-machine-3.png"] = function(t)  OverrideAnimation(t[#t], 4) end,
 		--assembler-pipes
 	["__base__/graphics/entity/assembling-machine-3/pipe-north.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/assembling-machine-3/pipe-east.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -61,7 +61,7 @@ ChangeTextureConfiguration =
 	--[[basic-accumulator]]--
 	["__base__/graphics/entity/basic-accumulator/basic-accumulator.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/basic-accumulator/basic-accumulator-charge-animation.png"] = function(t)
-		t[#t] = layers = 
+		t[#t].layers = 
 		{
 			{
 				width = 124 * 2,
@@ -97,7 +97,7 @@ ChangeTextureConfiguration =
 		}
 	end,
 	["__base__/graphics/entity/basic-accumulator/basic-accumulator-discharge-animation.png"] = function(t)
-		t[#t] = layers = 
+		t[#t].layers = 
 		{
 			{
 				width = 124 * 2,
@@ -163,7 +163,7 @@ ChangeTextureConfiguration =
 	["__base__/graphics/entity/burner-mining-drill/west.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[car]]]--
+	--[[car]]--
 	["__base__/graphics/entity/car/car-1.png"] = function(t)
 		if #t > 2 and t[#t - 1].stripes ~= nil then
 			ScaleSprite(t[#t - 2])
@@ -178,6 +178,7 @@ ChangeTextureConfiguration =
 	--[[cargo-wagon]]--
 	["__base__/graphics/entity/cargo-wagon/cargo-wagon-spritesheet-1.png"] = function(t)
 		if #t > 1 and t[#t - 1].filenames ~= nil then
+			ScaleSprite(t[#t - 1])
 			t[#t - 1].line_length = 2
 			t[#t - 1].lines_per_file = 4
 			t[#t - 1].filenames = CreateFilePaths("__WaiTex__/graphics/entity/cargo-wagon/cargo-wagon-spritesheet-", ".png", 16)
@@ -210,11 +211,7 @@ ChangeTextureConfiguration =
 		AddStripes(t[#t], 16, 2, CreateFilePaths("__WaiTex__/graphics/entity/destroyer-robot/destroyer-robot-", ".png", 2))
 		t[#t].line_length = 16
 		t[#t].y = nil
-	end
-	["__base__/graphics/entity/destroyer-robot/destroyer-robot.png"] = function(t)
-		AddStripes(t[#t], 16, 2, CreateFilePaths("__WaiTex__/graphics/entity/destroyer-robot/destroyer-robot-", ".png", 2))
-		t[#t].line_length = 16
-	end
+	end,
 	
 	
 	--[[distractor]]--
@@ -231,23 +228,414 @@ ChangeTextureConfiguration =
 	
 	
 	--[[curved-rail]]--
+	["__base__/graphics/entity/curved-rail/curved-rail-vertical-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/curved-rail/curved-rail-vertical-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/curved-rail/curved-rail-vertical-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/curved-rail/curved-rail-vertical-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/curved-rail/curved-rail-horizontal-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/curved-rail/curved-rail-horizontal-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/curved-rail/curved-rail-horizontal-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/curved-rail/curved-rail-horizontal-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[decorative]]--
+	["__base__/graphics/entity/decorative/brown-asterisk/brown-asterisk-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/green-asterisk/green-asterisk-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/red-asterisk/red-asterisk-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/green-pita/green-pita-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/green-pita-mini/green-pita-mini-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/brown-cane-cluster/brown-cane-cluster-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/brown-cane-single/brown-cane-single-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/green-coral-mini/green-coral-mini-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/brown-coral-mini/brown-coral-mini-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/orange-coral-mini/orange-coral-mini-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/brown-fluff/brown-fluff-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/brown-fluff-dry/brown-fluff-dry-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/garballo/garballo-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/garballo-mini-dry/garballo-mini-dry-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/green-bush-mini/green-bush-mini-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/green-hairy-grass/green-hairy-grass-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/green-carpet-grass/green-carpet-grass-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/green-small-grass/green-small-grass-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/roots/root-A-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/roots/root-B-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/stone-rock/stone-rock-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/brown-carpet-grass/brown-carpet-grass-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/brown-hairy-grass/brown-hairy-grass-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	["__base__/graphics/entity/decorative/small-stone-rock/small-stone-rock-01.png"] = function(t) if #t > 1 then OverrideAllSprites(t[#t - 1]) end end,
+	
+	
+	--[[diesel-locomotive]]--
+	["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-01.png"] = function(t)
+		if #t > 1 and t[#t - 1].filenames ~= nil then
+			ScaleSprite(t[#t - 1])
+			t[#t - 1].line_length = 2
+			t[#t - 1].lines_per_file = 4
+			t[#t - 1].filenames = CreateFilePaths("__WaiTex__/graphics/entity/diesel-locomotive/diesel-locomotive-", ".png", 32)
+		end
+	end,
+	
+	
+	--[[electric-furnace]]--
+	["__base__/graphics/entity/electric-furnace/electric-furnace-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/electric-furnace/electric-furnace-heater.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/electric-furnace/electric-furnace-propeller-1.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/electric-furnace/electric-furnace-propeller-2.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[express-splitter]]--
+	["__base__/graphics/entity/express-splitter/express-splitter-north.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
+	["__base__/graphics/entity/express-splitter/express-splitter-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/express-splitter/express-splitter-south.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
+	["__base__/graphics/entity/express-splitter/express-splitter-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[express-transport-belt-to-ground]]--
+	["__base__/graphics/entity/express-transport-belt-to-ground/express-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/express-transport-belt-to-ground/express-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[fast-inserter]]--
+	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/fast-inserter/fast-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[fast-splitter]]--
+	["__base__/graphics/entity/fast-splitter/fast-splitter-north.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
+	["__base__/graphics/entity/fast-splitter/fast-splitter-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fast-splitter/fast-splitter-south.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
+	["__base__/graphics/entity/fast-splitter/fast-splitter-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[fast-transport-belt-to-ground]]--
+	["__base__/graphics/entity/fast-transport-belt-to-ground/fast-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fast-transport-belt-to-ground/fast-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[gate]]--
+	["__base__/graphics/entity/gate/gate-vertical.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-vertical-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-horizontal.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-horizontal-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-base-vertical.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-base-vertical-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-rail-horizontal-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-rail-horizontal-shadow-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-rail-horizontal-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-rail-horizontal-shadow-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-rail-vertical-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-rail-vertical-shadow-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-rail-vertical-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-rail-vertical-shadow-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-rail-base-vertical.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-rail-base-horizontal.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-rail-base-mask-vertical.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/gate-rail-base-mask-horizontal.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-base-horizontal.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/gate-base-horizontal-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/wall-patch-north.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/wall-patch-north-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/wall-patch-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/wall-patch-east-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/wall-patch-south.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/wall-patch-south-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/wall-patch-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/gate/wall-patch-west-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/wall-diode-green.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gate/wall-diode-red.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
 	
 	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
-	--[[cargo-wagon]]--
+	["__base__/graphics/entity/gun-turret/gun-turret-gun-extension.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/gun-turret/gun-turret-gun-1.png"] = function(t)
+		if #t > 2 then
+			AddStripes(t[#t - 2], 8, 1, CreateFilePaths("__WaiTex__/graphics/entity/gun-turret/gun-turret-gun-", ".png", 16))
+		end
+	end,
+	["__base__/graphics/entity/gun-turret/gun-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[iron-chest]]--
+	["__base__/graphics/entity/iron-chest/iron-chest.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[iron-ore]]--
+	["__base__/graphics/entity/iron-ore/iron-ore.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[lab]]--
+	["__base__/graphics/entity/lab/lab.png"] = function(t)
+		if t[#t].line_length ~= nil then
+			OverrideAnimation(t[#t], 3)
+		else
+			OverrideSprite(t[#t])
+		end
+	end,
+	
+	
+	--[[laser-turret]]--
+	["__base__/graphics/entity/laser-turret/laser-turret-gun-start.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/laser-turret/laser-turret-gun.png"] = function(t) AddStripes(t[#t], 4, 1, CreateFilePaths("__WaiTex__/graphics/entity/laser-turret/laser-turret-", ".png", 16)) end,
+	["__base__/graphics/entity/laser-turret/laser-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[logistic-chest-passive-provider]]--
+	["__base__/graphics/entity/logistic-chest/logistic-chest-passive-provider.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[logistic-chest-active-provider]]--
+	["__base__/graphics/entity/logistic-chest/logistic-chest-active-provider.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[logistic-chest-storage]]--
+	["__base__/graphics/entity/logistic-chest/logistic-chest-storage.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[logistic-chest-requester]]--
+	["__base__/graphics/entity/logistic-chest/logistic-chest-requester.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[logistic-robot]]--
+	["__base__/graphics/entity/logistic-robot/logistic-robot.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[long-handed-inserter]]--
+	["__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/long-handed-inserter/long-handed-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/long-handed-inserter/long-handed-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[medium-electric-pole]]--
+	["__base__/graphics/entity/medium-electric-pole/medium-electric-pole.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[offshore-pump]]--
+	["__base__/graphics/entity/offshore-pump/offshore-pump.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[oil-refinery]]--
+	["__base__/graphics/entity/oil-refinery/oil-refinery.png"] = function(t)
+		if #t > 1 and t[#t - 1].north ~= nil and t[#t - 1].east ~= nil and t[#t - 1].west ~= nil and t[#t - 1].south ~= nil then
+			OverrideAllSprites(t[#t - 1])
+			t[#t - 1].south.x = 0
+			t[#t - 1].south.y = t[#t - 1].south.height
+			t[#t - 1].west.x = t[#t - 1].west.width
+			t[#t - 1].west.y = t[#t - 1].west.height
+		end
+	end,
+	
+	
+	--[[pipe]]--
+	["__base__/graphics/entity/pipe/pipe-straight-vertical.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-straight-vertical-window.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-straight-horizontal-window.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-straight-horizontal.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-corner-up-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-corner-up-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-corner-down-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-corner-down-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-t-up.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-t-down.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-t-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-t-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-cross.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-ending-up.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-ending-down.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-ending-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-ending-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-horizontal-window-background.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe/pipe-vertical-window-background.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/pipe/fluid-background.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+		
+	--[["pipe-covers"]]--
+	["__base__/graphics/entity/pipe-covers/pipe-cover-north.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe-covers/pipe-cover-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe-covers/pipe-cover-south.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe-covers/pipe-cover-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[pipe-to-ground]]--
+	["__base__/graphics/entity/pipe-to-ground/pipe-to-ground-up.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe-to-ground/pipe-to-ground-down.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe-to-ground/pipe-to-ground-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pipe-to-ground/pipe-to-ground-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[pumpjack]]--
+	["__base__/graphics/entity/pumpjack/pumpjack-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/pumpjack/pumpjack-animation.png"] = function(t) 
+		OverrideSprite(t[#t])
+		t[#t].line_length = 5
+	end,
+	
+	
+	--[[radar]]--
+	["__base__/graphics/entity/radar/radar.png"] = function(t)
+		ScaleSprite(t[#t])
+		t[#t].direction_count = 64
+		t[#t].lines_per_file = 1
+		t[#t].line_length = 4
+		t[#t].filename = nil
+		t[#t].filenames = CreateFilePaths("__WaiTex__/graphics/entity/radar/radar", ".png", 16)
+	end,
+	
+	
+	--[[rail-chain-signal]]--
+	["__base__/graphics/entity/rail-chain-signal/rail-chain-signal.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rail-chain-signal/rail-chain-signal-metal.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[player]]--
+		--[[level 1]]--
+	["__base__/graphics/entity/player/player-basic-idle.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-idle/player-basic-idle-", ".png", 176))
+	end,
+	["__base__/graphics/entity/player/player-basic-idle-gun.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-idle-gun/player-basic-idle-gun-", ".png", 176))
+	end,
+	["__base__/graphics/entity/player/player-basic-mine.png"] = function(t)
+		OverrideSprite(t[#t], nil, "__WaiTex__/graphics/entity/player/player-basic-mine.png")
+	end,
+	["__base__/graphics/entity/player/player-basic-mine-tool.png"] = function(t)
+		AddStripes(t[#t], nil, nil, (function()
+			result = {}
+			for i = 1, 16 do
+				result[#result + 1] = {"__WaiTex__/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-"..tostring(i).."-1.png", 7, 1}
+				result[#result + 1] = {"__WaiTex__/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-"..tostring(i).."-2.png", 6, 1}
+			end
+			return result
+		end)())
+	end,
+		["__base__/graphics/entity/player/player-basic-run-gun.png"] = function(t)
+		AddStripes(t[#t], 11, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-run-gun/player-basic-run-gun-", ".png", 36))
+	end,
+	["__base__/graphics/entity/player/player-basic-run.png"] = function(t)
+		AddStripes(t[#t], 11, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-run/player-basic-run-", ".png", 16))
+	end,
+		--[[level 2]]--
+	["__base__/graphics/entity/player/player-armor1-idle.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor1-idle-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor1-mine.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor1-mine-tool.png"] = function(t)
+		AddStripes(t[#t], 13, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-armor1-mine-tool/player-armor1-mine-tool-", ".png", 16))
+	end,
+	["__base__/graphics/entity/player/player-armor1-run-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor1-run.png"] = function(t)  OverrideSprite(t[#t]) end,
+		--[[level 3]]--
+	["__base__/graphics/entity/player/player-armor2-idle.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor2-idle-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor2-mine.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor2-mine-tool.png"] = function(t)
+		AddStripes(t[#t], 13, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-armor2-mine-tool/player-armor2-mine-tool-", ".png", 16))
+	end,
+	["__base__/graphics/entity/player/player-armor2-run-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor2-run.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[rail-signal]]--
+	["__base__/graphics/entity/rail-signal/rail-signal.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[roboport]]--
+	["__base__/graphics/entity/roboport/roboport-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/roboport/roboport-base-patch.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/roboport/roboport-base-animation.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/roboport/roboport-door-up.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/roboport/roboport-door-down.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[rocket-silo]]--
+	["__base__/graphics/entity/rocket-silo/01-hole/01-hole.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/01-hole/01-hole-light.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/04-05-doors/04-door-back.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/04-05-doors/05-door-front.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/06-silo-base/06-silo-base-day.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/06-silo-base/06-silo-base-night.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/08-arms-back-satellite-animation/satellite.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/08-arms-back-satellite-animation/arm-01-back.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/08-arms-back-satellite-animation/arm-02-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/13-arm-front-red-lights-front/arm-03-front.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/14-silo-front/14-silo-front.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[rocket-silo-rocket]]--
+	["__base__/graphics/entity/rocket-silo/02-11-rocket/02-rocket.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/10-rocket-under/jet-flame.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/10-rocket-under/jet-flame.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/rocket-silo/10-rocket-under/jet-flame.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[small-electric-pole]]--
+	["__base__/graphics/entity/small-electric-pole/small-electric-pole.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[small-lamp]]--
+	["__base__/graphics/entity/small-lamp/light-off.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[small-pump]]--
+	["__base__/graphics/entity/small-pump/small-pump-up.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/small-pump/small-pump-right.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/small-pump/small-pump-down.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/small-pump/small-pump-left.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[smart-chest]]--
+	["__base__/graphics/entity/smart-chest/smart-chest.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[smart-inserter]]--
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[solar-panel]]--
+	["__base__/graphics/entity/solar-panel/solar-panel.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[biter-spawner]]--
+	["__base__/graphics/entity/spawner/spawner-idle.png"] = function(t)
+		AddStripes(data.raw["unit-spawner"]["biter-spawner"].animations[1].layers[1], 4, 1,
+		{
+			"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-1.png",
+			"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-2.png",
+		})
+		ChangeSettings(data.raw["unit-spawner"]["biter-spawner"].animations[1].layers[1], {{"line_length", nil}, {"y", nil}})
+	
+		AddStripes(data.raw["unit-spawner"]["biter-spawner"].animations[2].layers[1], 4, 1,
+		{
+			"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-3.png",
+			"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-4.png",
+		})
+		ChangeSettings(data.raw["unit-spawner"]["biter-spawner"].animations[2].layers[1], {{"line_length", nil}, {"y", nil}})
+	
+		AddStripes(data.raw["unit-spawner"]["biter-spawner"].animations[3].layers[1], 4, 1,
+		{
+			"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-5.png",
+			"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-6.png",
+		})
+		ChangeSettings(data.raw["unit-spawner"]["biter-spawner"].animations[3].layers[1], {{"line_length", nil}, {"y", nil}})
+	
+		AddStripes(data.raw["unit-spawner"]["biter-spawner"].animations[4].layers[1], 4, 1,
+		{
+			"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-7.png",
+			"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-8.png",
+		})
+		ChangeSettings(data.raw["unit-spawner"]["biter-spawner"].animations[4].layers[1], {{"line_length", nil}, {"y", nil}})
+	end,
+	--[[pumpjack]]--
+	--[[pumpjack]]--
+	--[[pumpjack]]--
 }
 
 function RecursiveOverrideBaseTextures(t)
 	for k,v in pairs(t[#t]) do
 		if type(v) == "string" then
-			if string.find(v, "__base__/graphics/entity") and ChangeTextureConfiguration[v] ~= nil then
+			if ChangeTextureConfiguration[v] ~= nil then
 				ChangeTextureConfiguration[v](t)
 				return
 			end
@@ -261,447 +649,12 @@ end
 
 for k,v in pairs(data.raw) do
 	for k1,v1 in pairs(v) do
-		if AllowChange(v1.name) then
+		if AllowChange(v1.name) == true then
 			RecursiveOverrideBaseTextures({v1})
 		end
 	end
 end
 --[[
-
-
---curved-rail
-if AllowChange("curved-rail", data.raw["rail"]["curved-rail"].pictures["curved_rail_horizontal"]["metals"]) then
-	--OverrideSprite(data.raw["rail"]["curved-rail"].pictures["curved_rail_horizontal"]["metals"])
-	OverrideSprite(data.raw["rail"]["curved-rail"].pictures["curved_rail_horizontal"]["backplates"])
-	OverrideSprite(data.raw["rail"]["curved-rail"].pictures["curved_rail_horizontal"]["ties"])
-	--OverrideSprite(data.raw["rail"]["curved-rail"].pictures["curved_rail_vertical"]["metals"], 4)
-	OverrideSprite(data.raw["rail"]["curved-rail"].pictures["curved_rail_vertical"]["backplates"])
-	OverrideSprite(data.raw["rail"]["curved-rail"].pictures["curved_rail_vertical"]["ties"])
-end
-
---decorative
-if AllowChange("decorative", data.raw["decorative"]["brown-asterisk"].pictures[1]) then
-	OverrideAllSprites(data.raw["decorative"]["brown-asterisk"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["brown-cane-cluster"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["brown-cane-single"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["brown-carpet-grass"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["brown-coral-mini"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["brown-fluff"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["brown-fluff-dry"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["brown-hairy-grass"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["garballo"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["garballo-mini-dry"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["green-asterisk"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["green-bush-mini"].pictures)
-	--OverrideAllSprites(data.raw["decorative"]["green-carpet-grass"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["green-coral-mini"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["green-hairy-grass"].pictures)
-	--OverrideAllSprites(data.raw["decorative"]["green-pita"].pictures)
-	--OverrideAllSprites(data.raw["decorative"]["green-pita-mini"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["green-small-grass"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["orange-coral-mini"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["orange-coral-mini"].pictures)
-	OverrideAllSprites(data.raw["decorative"]["root-A"].pictures)
-	--OverrideAllSprites(data.raw["decorative"]["small-rock"].pictures)
-	--OverrideAllSprites(data.raw["simple-entity"]["stone-rock"].pictures)
-end
-
-
---diesel-locomotive
-if AllowChange("diesel-locomotive", data.raw["locomotive"]["diesel-locomotive"].pictures) then
-	ScaleSprite(data.raw["locomotive"]["diesel-locomotive"].pictures)
-	data.raw["locomotive"]["diesel-locomotive"].pictures.line_length = 2
-	data.raw["locomotive"]["diesel-locomotive"].pictures.lines_per_file = 4
-	data.raw["locomotive"]["diesel-locomotive"].pictures.filenames = CreateFilePaths("__WaiTex__/graphics/entity/diesel-locomotive/diesel-locomotive-", ".png", 32)
-end
-
-
---electric-furnace
-if AllowChange("electric-furnace", data.raw["furnace"]["electric-furnace"].animation) then
-	OverrideSprite(data.raw["furnace"]["electric-furnace"].animation)
-	OverrideSprite(data.raw["furnace"]["electric-furnace"].working_visualisations[1].animation)
-	OverrideSprite(data.raw["furnace"]["electric-furnace"].working_visualisations[2].animation)
-	OverrideSprite(data.raw["furnace"]["electric-furnace"].working_visualisations[3].animation)
-end
-
-
---express-splitter
-if AllowChange("express-splitter", data.raw["splitter"]["express-splitter"].structure.north) then
-	OverrideAnimation(data.raw["splitter"]["express-splitter"].structure.north, 8)
-	OverrideSprite(data.raw["splitter"]["express-splitter"].structure.east)
-	OverrideAnimation(data.raw["splitter"]["express-splitter"].structure.south, 8)
-	OverrideSprite(data.raw["splitter"]["express-splitter"].structure.west)
-end
-
-
---express-transport-belt-to-ground
-if AllowChange("express-transport-belt-to-ground", data.raw["transport-belt-to-ground"]["express-transport-belt-to-ground"].structure.direction_in.sheet) then
-	OverrideSprite(data.raw["transport-belt-to-ground"]["express-transport-belt-to-ground"].structure.direction_in.sheet)
-	OverrideSprite(data.raw["transport-belt-to-ground"]["express-transport-belt-to-ground"].structure.direction_out.sheet)
-end
-
-
---fast-inserter
-if AllowChange("fast-inserter", data.raw["inserter"]["fast-inserter"].hand_base_picture) then
-	OverrideSprite(data.raw["inserter"]["fast-inserter"].hand_base_picture, 1)
-	OverrideSprite(data.raw["inserter"]["fast-inserter"].hand_closed_picture, 1)
-	OverrideSprite(data.raw["inserter"]["fast-inserter"].hand_open_picture, 1)
-	OverrideSprite(data.raw["inserter"]["fast-inserter"].platform_picture.sheet)
-end
-
-
---fast-splitter
-if AllowChange("fast-splitter", data.raw["splitter"]["fast-splitter"].structure.north) then
-	OverrideAnimation(data.raw["splitter"]["fast-splitter"].structure.north, 8)
-	OverrideSprite(data.raw["splitter"]["fast-splitter"].structure.east)
-	OverrideAnimation(data.raw["splitter"]["fast-splitter"].structure.south, 8)
-	OverrideSprite(data.raw["splitter"]["fast-splitter"].structure.west)
-end
-
-
---fast-transport-belt-to-ground
-if AllowChange("fast-transport-belt-to-ground", data.raw["transport-belt-to-ground"]["fast-transport-belt-to-ground"].structure.direction_in.sheet) then
-	OverrideSprite(data.raw["transport-belt-to-ground"]["fast-transport-belt-to-ground"].structure.direction_in.sheet)
-	OverrideSprite(data.raw["transport-belt-to-ground"]["fast-transport-belt-to-ground"].structure.direction_out.sheet)
-end
-
-
---gate
-if AllowChange("gate", data.raw["gate"]["gate"].vertical_animation.layers[1]) then
-	OverrideSprite(data.raw["gate"]["gate"].vertical_animation.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].vertical_animation.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].horizontal_animation.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].horizontal_animation.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].horizontal_rail_animation_left.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].horizontal_rail_animation_left.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].horizontal_rail_animation_right.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].horizontal_rail_animation_right.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].vertical_rail_animation_left.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].vertical_rail_animation_left.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].vertical_rail_animation_right.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].vertical_rail_animation_right.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].vertical_rail_base)
-	OverrideSprite(data.raw["gate"]["gate"].horizontal_rail_base)
-	OverrideSprite(data.raw["gate"]["gate"].vertical_rail_base_mask)
-	OverrideSprite(data.raw["gate"]["gate"].horizontal_rail_base_mask)
-	OverrideSprite(data.raw["gate"]["gate"].wall_patch.north.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].wall_patch.north.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].wall_patch.east.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].wall_patch.east.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].wall_patch.south.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].wall_patch.south.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].wall_patch.west.layers[1])
-	--OverrideSprite(data.raw["gate"]["gate"].wall_patch.west.layers[2])
-	OverrideSprite(data.raw["gate"]["gate"].wall_diode_green)
-	OverrideSprite(data.raw["gate"]["gate"].wall_diode_red)
-end
-
-
---gun-turret
-if AllowChange("gun-turret", data.raw["ammo-turret"]["gun-turret"].folded_animation.layers[1]) then
-	OverrideSprite(data.raw["ammo-turret"]["gun-turret"].folded_animation.layers[1])
-	OverrideSprite(data.raw["ammo-turret"]["gun-turret"].preparing_animation.layers[1])
-	AddStripes(data.raw["ammo-turret"]["gun-turret"].prepared_animation.layers[1], 8, 1, CreateFilePaths("__WaiTex__/graphics/entity/gun-turret/gun-turret-gun-", ".png", 16))
-	AddStripes(data.raw["ammo-turret"]["gun-turret"].attacking_animation.layers[1], 8, 1, CreateFilePaths("__WaiTex__/graphics/entity/gun-turret/gun-turret-gun-", ".png", 16))
-	data.raw["ammo-turret"]["gun-turret"].attacking_animation.layers[1].frame_count = nil
-	--ChangeSettings(data.raw["ammo-turret"]["gun-turret"].attacking_animation.layers[1], {{"frame_count", 16}})
-	OverrideSprite(data.raw["ammo-turret"]["gun-turret"].folding_animation.layers[1])
-	OverrideSprite(data.raw["ammo-turret"]["gun-turret"].base_picture.layers[1])
-end
-
-
---iron-chest
-if AllowChange("iron-chest", data.raw["container"]["iron-chest"].picture) then
-	OverrideSprite(data.raw["container"]["iron-chest"].picture)
-end
-
-
---iron-ore
-if AllowChange("iron-ore", data.raw["resource"]["iron-ore"].stages.sheet) then
-	OverrideSprite(data.raw["resource"]["iron-ore"].stages.sheet)
-end
-
---lab
-if AllowChange("lab", data.raw["lab"]["lab"].on_animation) then
-	OverrideAnimation(data.raw["lab"]["lab"].on_animation, 3)
-	OverrideSprite(data.raw["lab"]["lab"].off_animation)
-end
-
-
---laser-turret
-if AllowChange("laser-turret", data.raw["electric-turret"]["laser-turret"].folded_animation) then
-	OverrideSprite(data.raw["electric-turret"]["laser-turret"].folded_animation)
-	OverrideSprite(data.raw["electric-turret"]["laser-turret"].preparing_animation)
-	data.raw["electric-turret"]["laser-turret"].prepared_animation.filename = nil
-	AddStripes(data.raw["electric-turret"]["laser-turret"].prepared_animation, 4, 1, CreateFilePaths("__WaiTex__/graphics/entity/laser-turret/laser-turret-", ".png", 16))
-	OverrideSprite(data.raw["electric-turret"]["laser-turret"].folding_animation)
-	OverrideSprite(data.raw["electric-turret"]["laser-turret"].base_picture)
-end
-
-
---logistic-chest
-if AllowChange("logistic-chest-passive-provider", data.raw["logistic-container"]["logistic-chest-passive-provider"].picture) then
-	OverrideSprite(data.raw["logistic-container"]["logistic-chest-passive-provider"].picture)
-end
-if AllowChange("logistic-chest-active-provider", data.raw["logistic-container"]["logistic-chest-active-provider"].picture) then
-	OverrideSprite(data.raw["logistic-container"]["logistic-chest-active-provider"].picture)
-end
-if AllowChange("logistic-chest-storage", data.raw["logistic-container"]["logistic-chest-storage"].picture) then
-	OverrideSprite(data.raw["logistic-container"]["logistic-chest-storage"].picture)
-end
-if AllowChange("logistic-chest-requester", data.raw["logistic-container"]["logistic-chest-requester"].picture) then
-	OverrideSprite(data.raw["logistic-container"]["logistic-chest-requester"].picture)
-end
-
-
---logistic-robot
-if AllowChange("logistic-robot", data.raw["logistic-robot"]["logistic-robot"].idle) then
-	OverrideSprite(data.raw["logistic-robot"]["logistic-robot"].idle)
-	OverrideSprite(data.raw["logistic-robot"]["logistic-robot"].idle_with_cargo)
-	OverrideSprite(data.raw["logistic-robot"]["logistic-robot"].in_motion)
-	OverrideSprite(data.raw["logistic-robot"]["logistic-robot"].in_motion_with_cargo)
-end
-
-
---long-handed-inserter
-if AllowChange("long-handed-inserter", data.raw["inserter"]["long-handed-inserter"].hand_base_picture) then
-	OverrideSprite(data.raw["inserter"]["long-handed-inserter"].hand_base_picture, 1)
-	OverrideSprite(data.raw["inserter"]["long-handed-inserter"].hand_closed_picture, 1)
-	OverrideSprite(data.raw["inserter"]["long-handed-inserter"].hand_open_picture, 1)
-	OverrideSprite(data.raw["inserter"]["long-handed-inserter"].platform_picture.sheet)
-end
-
-
---medium-electric-pole
-if AllowChange("medium-electric-pole", data.raw["electric-pole"]["medium-electric-pole"].pictures) then
-	OverrideSprite(data.raw["electric-pole"]["medium-electric-pole"].pictures)
-end
-
-
---offshore-pump
-if AllowChange("offshore-pump", data.raw["offshore-pump"]["offshore-pump"].picture.north) then
-	OverrideSprite(data.raw["offshore-pump"]["offshore-pump"].picture.north)
-	OverrideSprite(data.raw["offshore-pump"]["offshore-pump"].picture.east)
-	OverrideSprite(data.raw["offshore-pump"]["offshore-pump"].picture.south)
-	OverrideSprite(data.raw["offshore-pump"]["offshore-pump"].picture.west)
-end
-
-
---oil-refinery
-if AllowChange("oil-refinery", data.raw["assembling-machine"]["oil-refinery"].animation.north) then
-	OverrideSprite(data.raw["assembling-machine"]["oil-refinery"].animation.north)
-	OverrideSprite(data.raw["assembling-machine"]["oil-refinery"].animation.east)
-	OverrideSprite(data.raw["assembling-machine"]["oil-refinery"].animation.south)
-	data.raw["assembling-machine"]["oil-refinery"].animation.south.x = 0
-	data.raw["assembling-machine"]["oil-refinery"].animation.south.y = data.raw["assembling-machine"]["oil-refinery"].animation.south.height
-	OverrideSprite(data.raw["assembling-machine"]["oil-refinery"].animation.west)
-	data.raw["assembling-machine"]["oil-refinery"].animation.west.x = data.raw["assembling-machine"]["oil-refinery"].animation.west.width
-	data.raw["assembling-machine"]["oil-refinery"].animation.west.y = data.raw["assembling-machine"]["oil-refinery"].animation.west.height
-end
-
-
---pipe
-if AllowChange("pipe", data.raw["pipe"]["pipe"].pictures.straight_vertical_single) then
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.straight_vertical_single)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.straight_vertical)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.straight_vertical_window)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.straight_horizontal_window)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.straight_horizontal)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.corner_up_right)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.corner_up_left)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.corner_down_right)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.corner_down_left)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.t_up)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.t_down)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.t_right)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.t_left)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.cross)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.ending_up)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.ending_down)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.ending_right)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.ending_left)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.horizontal_window_background)
-	OverrideSprite(data.raw["pipe"]["pipe"].pictures.vertical_window_background)	
-end
-
-
---pipe-covers
-if AllowChange("pipe-covers", nil, true) then
-	--override all instances
-	for k1,v1 in pairs(data.raw) do
-		for k2,v2 in pairs(v1) do
-			if v2["pipe_covers"] ~= nil then
-				for k3,v3 in pairs(v2["pipe_covers"]) do
-					OverrideSprite(v3)
-				end
-			end
-		end
-	end
-end
-
-
---pipe-to-ground
-if AllowChange("pipe-to-ground", data.raw["pipe-to-ground"]["pipe-to-ground"].pictures.up) then
-	OverrideSprite(data.raw["pipe-to-ground"]["pipe-to-ground"].pictures.up)
-	OverrideSprite(data.raw["pipe-to-ground"]["pipe-to-ground"].pictures.down)
-	OverrideSprite(data.raw["pipe-to-ground"]["pipe-to-ground"].pictures.left)
-	OverrideSprite(data.raw["pipe-to-ground"]["pipe-to-ground"].pictures.right)
-end
-
-
---pumpjack
-if AllowChange("pumpjack", data.raw["mining-drill"]["pumpjack"].base_picture.sheet) then
-	OverrideSprite(data.raw["mining-drill"]["pumpjack"].base_picture.sheet)
-	OverrideSprite(data.raw["mining-drill"]["pumpjack"].animations.north)
-	data.raw["mining-drill"]["pumpjack"].animations.north.line_length = 5
-end
-
-
---radar
-if AllowChange("radar", data.raw["radar"]["radar"].pictures) then
-	ScaleSprite(data.raw["radar"]["radar"].pictures)
-	data.raw["radar"]["radar"].pictures.direction_count = 64
-	data.raw["radar"]["radar"].pictures.lines_per_file = 1
-	data.raw["radar"]["radar"].pictures.line_length = 4
-	data.raw["radar"]["radar"].pictures.filename = nil
-	data.raw["radar"]["radar"].pictures.filenames = CreateFilePaths("__WaiTex__/graphics/entity/radar/radar", ".png", 16)
-end
-
---rail-chain-signal
-if AllowChange("rail-chain-signal", data.raw["rail-chain-signal"]["rail-chain-signal"].animation) then
-	OverrideSprite(data.raw["rail-chain-signal"]["rail-chain-signal"].animation)
-	OverrideSprite(data.raw["rail-chain-signal"]["rail-chain-signal"].rail_piece)
-end
-
-
---player
-if AllowChange("player", data.raw["player"]["player"].animations[1].idle.layers[1]) then
-	-- TODO: need to fix the need for so many stripes
-	-- IT'S CURRENTLY SHIT CODE DUE TO THE MANY STRIPES
-	
-	AddStripes(data.raw["player"]["player"].animations[1].idle.layers[1], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-idle/player-basic-idle-", ".png", 176))	
-	AddStripes(data.raw["player"]["player"].animations[1].idle_with_gun.layers[1], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-idle-gun/player-basic-idle-gun-", ".png", 176))	
-	OverrideSprite(data.raw["player"]["player"].animations[1].mining_with_hands.layers[1], nil, "__WaiTex__/graphics/entity/player/player-basic-mine.png")
-	AddStripes(data.raw["player"]["player"].animations[1].mining_with_tool.layers[1], nil, nil, (function()
-		result = {}
-		for i = 1, 16 do
-			result[#result + 1] = {"__WaiTex__/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-"..tostring(i).."-1.png", 7, 1}
-			result[#result + 1] = {"__WaiTex__/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-"..tostring(i).."-2.png", 6, 1}
-		end
-		return result
-	end)())
-	AddStripes(data.raw["player"]["player"].animations[1].running.layers[1], 11, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-run/player-basic-run-", ".png", 16))
-	AddStripes(data.raw["player"]["player"].animations[1].running_with_gun.layers[1], 11, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-run-gun/player-basic-run-gun-", ".png", 36))
-	
-	data.raw["player"]["player"].animations[2].idle.layers[1] = data.raw["player"]["player"].animations[1].idle.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[2].idle.layers[3])
-	data.raw["player"]["player"].animations[2].idle_with_gun.layers[1] = data.raw["player"]["player"].animations[1].idle_with_gun.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[2].idle_with_gun.layers[3])
-	data.raw["player"]["player"].animations[2].mining_with_hands.layers[1] = data.raw["player"]["player"].animations[1].mining_with_hands.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[2].mining_with_hands.layers[3])
-	data.raw["player"]["player"].animations[2].mining_with_tool.layers[1] = data.raw["player"]["player"].animations[1].mining_with_tool.layers[1]
-	AddStripes(data.raw["player"]["player"].animations[2].mining_with_tool.layers[3], 13, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-armor1-mine-tool/player-armor1-mine-tool-", ".png", 16))
-	data.raw["player"]["player"].animations[2].running_with_gun.layers[1] = data.raw["player"]["player"].animations[2].running_with_gun.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[2].running_with_gun.layers[3])
-	data.raw["player"]["player"].animations[2].running.layers[1] = data.raw["player"]["player"].animations[2].running.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[2].running.layers[3])
-	
-	data.raw["player"]["player"].animations[3].idle.layers[1] = data.raw["player"]["player"].animations[1].idle.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[3].idle.layers[3])
-	data.raw["player"]["player"].animations[3].idle_with_gun.layers[1] = data.raw["player"]["player"].animations[1].idle_with_gun.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[3].idle_with_gun.layers[3])
-	data.raw["player"]["player"].animations[3].mining_with_hands.layers[1] = data.raw["player"]["player"].animations[1].mining_with_hands.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[3].mining_with_hands.layers[3])
-	data.raw["player"]["player"].animations[3].mining_with_tool.layers[1] = data.raw["player"]["player"].animations[1].mining_with_tool.layers[1]
-	AddStripes(data.raw["player"]["player"].animations[3].mining_with_tool.layers[3], 13, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-armor2-mine-tool/player-armor2-mine-tool-", ".png", 16))
-	data.raw["player"]["player"].animations[3].running_with_gun.layers[1] = data.raw["player"]["player"].animations[1].running_with_gun.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[3].running_with_gun.layers[3])
-	data.raw["player"]["player"].animations[3].running.layers[1] = data.raw["player"]["player"].animations[1].running.layers[1]
-	OverrideSprite(data.raw["player"]["player"].animations[3].running.layers[3])
-end
-
-
---rail-signal
-if AllowChange("rail-signal", data.raw["rail-signal"]["rail-signal"].animation) then
-	OverrideSprite(data.raw["rail-signal"]["rail-signal"].animation)
-end
-
-
---roboport
-if AllowChange("roboport", data.raw["roboport"]["roboport"].base) then
-	OverrideSprite(data.raw["roboport"]["roboport"].base)
-	OverrideSprite(data.raw["roboport"]["roboport"].base_patch)
-	OverrideSprite(data.raw["roboport"]["roboport"].base_animation)
-	OverrideSprite(data.raw["roboport"]["roboport"].door_animation_up)
-	OverrideSprite(data.raw["roboport"]["roboport"].door_animation_down)
-end
-
-
---rocket-silo
-if AllowChange("rocket-silo", data.raw["rocket-silo"]["rocket-silo"].hole_sprite) then
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].hole_sprite)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].hole_light_sprite)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].door_back_sprite)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].door_front_sprite)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].base_day_sprite)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].base_night_sprite)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].satellite_animation)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].arm_01_back_animation)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].arm_02_right_animation)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].arm_03_front_animation)
-	OverrideSprite(data.raw["rocket-silo"]["rocket-silo"].base_front_sprite)
-end
-
-
---rocket-silo-rocket
-if AllowChange("rocket-silo", data.raw["rocket-silo-rocket"]["rocket-silo-rocket"].rocket_sprite) then
-	OverrideSprite(data.raw["rocket-silo-rocket"]["rocket-silo-rocket"].rocket_sprite)
-	OverrideSprite(data.raw["rocket-silo-rocket"]["rocket-silo-rocket"].rocket_flame_animation)
-	OverrideSprite(data.raw["rocket-silo-rocket"]["rocket-silo-rocket"].rocket_flame_left_animation)
-	OverrideSprite(data.raw["rocket-silo-rocket"]["rocket-silo-rocket"].rocket_flame_right_animation)
-end
-
-
---small-electric-pole
-if AllowChange("small-electric-pole", data.raw["electric-pole"]["small-electric-pole"].pictures) then
-	OverrideSprite(data.raw["electric-pole"]["small-electric-pole"].pictures)
-end
-
---small-lamp
-if AllowChange("small-lamp", data.raw["lamp"]["small-lamp"].picture_on) then
-	--OverrideSprite(data.raw["lamp"]["small-lamp"].picture_on)
-	OverrideSprite(data.raw["lamp"]["small-lamp"].picture_off)
-end
-
-
---small-pump
-if AllowChange("small-pump", data.raw["pump"]["small-pump"].animations.north) then
-	OverrideSprite(data.raw["pump"]["small-pump"].animations.north)
-	OverrideSprite(data.raw["pump"]["small-pump"].animations.east)
-	OverrideSprite(data.raw["pump"]["small-pump"].animations.south)
-	OverrideSprite(data.raw["pump"]["small-pump"].animations.west)
-end
-
-
---smart-chest
-if AllowChange("smart-chest", data.raw["smart-container"]["smart-chest"].picture) then
-	OverrideSprite(data.raw["smart-container"]["smart-chest"].picture)
-end
-
-
---smart-inserter
-if AllowChange("smart-inserter", data.raw["inserter"]["smart-inserter"].hand_base_picture) then
-	OverrideSprite(data.raw["inserter"]["smart-inserter"].hand_base_picture, 1)
-	OverrideSprite(data.raw["inserter"]["smart-inserter"].hand_closed_picture, 1)
-	OverrideSprite(data.raw["inserter"]["smart-inserter"].hand_open_picture, 1)
-	OverrideSprite(data.raw["inserter"]["smart-inserter"].platform_picture.sheet)
-end
-
-
---solar-panel
-if AllowChange("solar-panel", data.raw["solar-panel"]["solar-panel"].picture) then
-	OverrideSprite(data.raw["solar-panel"]["solar-panel"].picture)
-end
 
 --biter-spawner
 if AllowChange("biter-spawner", data.raw["unit-spawner"]["biter-spawner"].animations[1].layers[1]) then

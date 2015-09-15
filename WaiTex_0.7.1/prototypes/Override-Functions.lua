@@ -62,15 +62,12 @@ end
 
 
 
-function AllowChange(name, t, doOverride)
-	if doOverride then
-		return true
-	end
+function AllowChange(name)
 	if TexturePermissions[name] == nil then
 		return false
 	end
 	local tex = TexturePermissions[name]
-	return tex.enabled and (GB1 == false or GB1 == true and tex.GB1 == false)
+	return (tex.enabled and ((not LimitTo1GB) or tex.AllowedIn1GB))
 end
 
 function IsBaseTexture(t)

@@ -1,89 +1,89 @@
 --Allowed textures to change
 
-GB1 = true
+LimitTo1GB = true
 
 TexturePermissions =
 {
-	["assembling-machine-1"] = 				{["enabled"] = true, ["GB1"] = false},
-	["assembling-machine-2"] = 				{["enabled"] = true, ["GB1"] = false},
-	["assembling-machine-3"] = 				{["enabled"] = true, ["GB1"] = false},
-	["basic-beacon"] = 						{["enabled"] = true, ["GB1"] = false},
-	["basic-inserter"] = 					{["enabled"] = true, ["GB1"] = false},
-	["basic-mining-drill"] = 				{["enabled"] = true, ["GB1"] = false},
-	["basic-splitter"] = 					{["enabled"] = true, ["GB1"] = false},
-	["basic-transport-belt"] = 				{["enabled"] = false, ["GB1"] = false},  --WIP
-	["basic-transport-belt-to-ground"] = 	{["enabled"] = true, ["GB1"] = false},
-	["basic-accumulator"] = 				{["enabled"] = true, ["GB1"] = false},
-	["big-electric-pole"] = 				{["enabled"] = true, ["GB1"] = false},
-	["biter-spawner"] = 					{["enabled"] = true, ["GB1"] = true}, --1GB
-	["boiler"] = 							{["enabled"] = false, ["GB1"] = false},  --WIP
-	["burner-inserter"] = 					{["enabled"] = true, ["GB1"] = false},
-	["burner-mining-drill"] = 				{["enabled"] = true, ["GB1"] = false},
-	["car"] = 								{["enabled"] = true, ["GB1"] = true}, --1GB
-	["cargo-wagon"] = 						{["enabled"] = true, ["GB1"] = true}, --1GB
-	["chemical-plant"] = 					{["enabled"] = true, ["GB1"] = false},
-	["coal"] = 								{["enabled"] = true, ["GB1"] = false},
-	["combinator"] = 						{["enabled"] = true, ["GB1"] = false},
-	["defender"] = 							{["enabled"] = true, ["GB1"] = false},
-	["destroyer"] = 						{["enabled"] = true, ["GB1"] = false},
-	["distractor"] = 						{["enabled"] = true, ["GB1"] = false},
-	["construction-robot"] = 				{["enabled"] = true, ["GB1"] = false},
-	["copper-ore"] = 						{["enabled"] = true, ["GB1"] = false},
-	["curved-rail"] = 						{["enabled"] = false, ["GB1"] = false},  --WIP
-	["decorative"] = 						{["enabled"] = true, ["GB1"] = true},  --1GB
-	["diesel-locomotive"] = 				{["enabled"] = true, ["GB1"] = true}, -- 1GB
-	["electric-furnace"] = 					{["enabled"] = true, ["GB1"] = false},
-	["express-splitter"] = 					{["enabled"] = true, ["GB1"] = false},
-	["express-transport-belt-to-ground"] = 	{["enabled"] = true, ["GB1"] = false},
-	["fast-inserter"] = 					{["enabled"] = true, ["GB1"] = false},
-	["fast-splitter"] = 					{["enabled"] = true, ["GB1"] = false},
-	["fast-transport-belt-to-ground"] = 	{["enabled"] = true, ["GB1"] = false},
-	["gate"] = 								{["enabled"] = true, ["GB1"] = false},
-	["gun-turret"] = 						{["enabled"] = false, ["GB1"] = false}, -- WIP
-	["iron-chest"] = 						{["enabled"] = true, ["GB1"] = false},
-	["iron-ore"] = 							{["enabled"] = true, ["GB1"] = false},
-	["lab"] = 								{["enabled"] = true, ["GB1"] = false},
-	["laser-turret"] = 						{["enabled"] = false, ["GB1"] = false}, --WIP
-	["logistic-chest-passive-provider"] = 	{["enabled"] = true, ["GB1"] = false},
-	["logistic-chest-active-provider"] = 	{["enabled"] = true, ["GB1"] = false},
-	["logistic-chest-storage"] = 			{["enabled"] = true, ["GB1"] = false},
-	["logistic-chest-requester"] = 			{["enabled"] = true, ["GB1"] = false},
-	["logistic-robot"] = 					{["enabled"] = true, ["GB1"] = false},
-	["long-handed-inserter"] = 				{["enabled"] = true, ["GB1"] = false},
-	["medium-electric-pole"] = 				{["enabled"] = true, ["GB1"] = false},
-	["offshore-pump"] = 					{["enabled"] = true, ["GB1"] = false},
-	["oil-refinery"] = 						{["enabled"] = true, ["GB1"] = false},
-	["pipe"] = 								{["enabled"] = true, ["GB1"] = false},
-	["pipe-covers"] = 						{["enabled"] = true, ["GB1"] = false},
-	["pipe-to-ground"] = 					{["enabled"] = true, ["GB1"] = false},
-	["pumpjack"] = 							{["enabled"] = true, ["GB1"] = false},
-	["radar"] = 							{["enabled"] = true, ["GB1"] = false},
-	["rail-chain-signal"] = 				{["enabled"] = true, ["GB1"] = false},
-	["player"] = 							{["enabled"] = true, ["GB1"] = true}, --cropcache.dat -- 1GB
-	["rail-signal"] = 						{["enabled"] = true, ["GB1"] = false},
-	["roboport"] = 							{["enabled"] = true, ["GB1"] = false},
-	["rocket-silo"] = 						{["enabled"] = true, ["GB1"] = true}, --1GB
-	["rocket-silo-rocket"] = 				{["enabled"] = true, ["GB1"] = true}, --1GB
-	["small-electric-pole"] = 				{["enabled"] = true, ["GB1"] = false},
-	["small-lamp"] = 						{["enabled"] = true, ["GB1"] = false},
-	["small-pump"] = 						{["enabled"] = true, ["GB1"] = false},
-	["smart-chest"] = 						{["enabled"] = true, ["GB1"] = false},
-	["smart-inserter"] = 					{["enabled"] = true, ["GB1"] = false},
-	["solar-panel"] = 						{["enabled"] = true, ["GB1"] = false},
-	["spitter-spawner"] = 					{["enabled"] = true, ["GB1"] = true},  --1GB
-	["steam-engine"] = 						{["enabled"] = true, ["GB1"] = true}, --1GB
-	["steel-chest"] = 						{["enabled"] = true, ["GB1"] = false},
-	["steel-furnace"] = 					{["enabled"] = true, ["GB1"] = false},
-	["stone"] = 							{["enabled"] = true, ["GB1"] = false},
-	["stone-furnace"] = 					{["enabled"] = true, ["GB1"] = false},
-	["stone-wall"] = 						{["enabled"] = true, ["GB1"] = false},
-	["storage-tank"] = 						{["enabled"] = true, ["GB1"] = false},
-	["straight-rail"] = 					{["enabled"] = false, ["GB1"] = false},  --WIP
-	["substation"] = 						{["enabled"] = true, ["GB1"] = false},
-	["tank"] = 								{["enabled"] = true, ["GB1"] = true}, --1GB
-	["train-stop"] = 						{["enabled"] = true, ["GB1"] = false},
-	["tree"] = 								{["enabled"] = false, ["GB1"] = true}, --WIP 1GB
-	["wooden-chest"] = 						{["enabled"] = true, ["GB1"] = false}
+	["assembling-machine-1"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["assembling-machine-2"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["assembling-machine-3"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["basic-beacon"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["basic-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["basic-mining-drill"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["basic-splitter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	--["basic-transport-belt"] = 				{["enabled"] = false,["AllowedIn1GB"] = true},  --WIP
+	["basic-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["basic-accumulator"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["big-electric-pole"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["biter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["boiler"] = 							{["enabled"] = false,["AllowedIn1GB"] = true},  --WIP
+	["burner-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["burner-mining-drill"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["car"] = 								{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["cargo-wagon"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["chemical-plant"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["coal"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["combinator"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["defender"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["destroyer"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["distractor"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["construction-robot"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["copper-ore"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["curved-rail"] = 						{["enabled"] = false,["AllowedIn1GB"] = true},  --WIP
+	["decorative"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["diesel-locomotive"] = 				{["enabled"] = true, ["AllowedIn1GB"] = false}, -- 1GB
+	["electric-furnace"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["express-splitter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["express-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["fast-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["fast-splitter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["fast-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["gate"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["gun-turret"] = 						{["enabled"] = false,["AllowedIn1GB"] = true}, -- WIP
+	["iron-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["iron-ore"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["lab"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["laser-turret"] = 						{["enabled"] = false,["AllowedIn1GB"] = true}, --WIP
+	["logistic-chest-passive-provider"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["logistic-chest-active-provider"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["logistic-chest-storage"] = 			{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["logistic-chest-requester"] = 			{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["logistic-robot"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["long-handed-inserter"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["medium-electric-pole"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["offshore-pump"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["oil-refinery"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["pipe"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["pipe-covers"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["pipe-to-ground"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["pumpjack"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["radar"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["rail-chain-signal"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["player"] = 							{["enabled"] = true, ["AllowedIn1GB"] = false}, --cropcache.dat -- 1GB
+	["rail-signal"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["roboport"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["rocket-silo"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["rocket-silo-rocket"] = 				{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["small-electric-pole"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["small-lamp"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["small-pump"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["smart-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["smart-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["solar-panel"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["spitter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false},  --1GB
+	["steam-engine"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["steel-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["steel-furnace"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["stone"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["stone-furnace"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["stone-wall"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["storage-tank"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["straight-rail"] = 					{["enabled"] = false,["AllowedIn1GB"] = true},  --WIP
+	["substation"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["tank"] = 								{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["train-stop"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["tree"] = 								{["enabled"] = false,["AllowedIn1GB"] = false}, --WIP 1GB
+	["wooden-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true}
 	
 	-- 
 }
