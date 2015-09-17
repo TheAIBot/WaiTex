@@ -228,14 +228,14 @@ ChangeTextureConfiguration =
 	
 	
 	--[[curved-rail]]--
-	["__base__/graphics/entity/curved-rail/curved-rail-vertical-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/curved-rail/curved-rail-vertical-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/curved-rail/curved-rail-vertical-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/curved-rail/curved-rail-vertical-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/curved-rail/curved-rail-horizontal-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/curved-rail/curved-rail-horizontal-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/curved-rail/curved-rail-horizontal-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/curved-rail/curved-rail-horizontal-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/curved-rail/curved-rail-vertical-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/curved-rail/curved-rail-vertical-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/curved-rail/curved-rail-vertical-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/curved-rail/curved-rail-vertical-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/curved-rail/curved-rail-horizontal-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/curved-rail/curved-rail-horizontal-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/curved-rail/curved-rail-horizontal-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/curved-rail/curved-rail-horizontal-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[decorative]]--
@@ -288,6 +288,47 @@ ChangeTextureConfiguration =
 	["__base__/graphics/entity/express-splitter/express-splitter-west.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
+	--[[express-transport-belt]]--
+	--[[
+	--["__base__/graphics/entity/express-transport-belt/express-transport-belt.png"] = function(t)
+		--local fisk = table.deepcopy(t[#t])
+		t[#t].priority = "extra-high"
+		t[#t].width = 40 * 2
+		t[#t].height = 40 * 2
+		t[#t].frame_count = 16
+		t[#t].filename = nil
+		--t[#t].direction_count = 0
+		t[#t].stripes = 
+		{
+			{
+				filename = "__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
+				width_in_frames = 16,
+				height_in_frames = 1,
+				y = (t[#t].y or 0) * 2
+			},
+			{
+				filename = "__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
+				width_in_frames = 16,
+				height_in_frames = 1,
+				y = ((t[#t].y or 0) * 2) + t[#t].height
+			}
+		}	
+		t[#t].y = nil
+		--t[#t] = fisk
+		--[[
+		AddStripes(t[#t], 16, 1, 
+		{
+			"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
+			"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png"
+		})
+		t[#t].frame_count = 32
+		t[#t].stripes[1].y = (t[#t].y or 0) * 2
+		t[#t].stripes[2].y = ((t[#t].y or 0) * 2) + t[#t].height
+		]]
+	--end,
+	--]]
+	
+	
 	--[[express-transport-belt-to-ground]]--
 	["__base__/graphics/entity/express-transport-belt-to-ground/express-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/express-transport-belt-to-ground/express-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -305,6 +346,9 @@ ChangeTextureConfiguration =
 	["__base__/graphics/entity/fast-splitter/fast-splitter-east.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/fast-splitter/fast-splitter-south.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
 	["__base__/graphics/entity/fast-splitter/fast-splitter-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[fast-transport-belt]]--
 	
 	
 	--[[fast-transport-belt-to-ground]]--
@@ -345,7 +389,8 @@ ChangeTextureConfiguration =
 	["__base__/graphics/entity/gate/wall-diode-red.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[cargo-wagon]]--
+	--[[gun-turret]]--
+	--[[
 	["__base__/graphics/entity/gun-turret/gun-turret-gun-extension.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/gun-turret/gun-turret-gun-1.png"] = function(t)
 		if #t > 2 then
@@ -353,6 +398,7 @@ ChangeTextureConfiguration =
 		end
 	end,
 	["__base__/graphics/entity/gun-turret/gun-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	]]
 	
 	
 	--[[iron-chest]]--
@@ -374,9 +420,9 @@ ChangeTextureConfiguration =
 	
 	
 	--[[laser-turret]]--
-	["__base__/graphics/entity/laser-turret/laser-turret-gun-start.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/laser-turret/laser-turret-gun.png"] = function(t) AddStripes(t[#t], 4, 1, CreateFilePaths("__WaiTex__/graphics/entity/laser-turret/laser-turret-", ".png", 16)) end,
-	["__base__/graphics/entity/laser-turret/laser-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/laser-turret/laser-turret-gun-start.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/laser-turret/laser-turret-gun.png"] = function(t) AddStripes(t[#t], 4, 1, CreateFilePaths("__WaiTex__/graphics/entity/laser-turret/laser-turret-", ".png", 16)) end,
+	--["__base__/graphics/entity/laser-turret/laser-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[logistic-chest-passive-provider]]--
@@ -649,8 +695,9 @@ ChangeTextureConfiguration =
 	
 	
 	--[[steel-furnace]]--
-	["__base__/graphics/entity/steel-furnace/steel-furnace.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/steel-furnace/steel-furnace-fire.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/steel-furnace/steel-furnace-working.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/steel-furnace/steel-furnace-idle.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/steel-furnace/steel-furnace-fire.png"] = function(t)  OverrideSprite(t[#t], 1.96) end,
 	
 	
 	--[[stone]]--
@@ -705,14 +752,14 @@ ChangeTextureConfiguration =
 	
 	
 	--[[straight-rail]]--
-	["__base__/graphics/entity/straight-rail/straight-rail-vertical-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/straight-rail/straight-rail-vertical-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/straight-rail/straight-rail-vertical-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/straight-rail/straight-rail-vertical-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/straight-rail/straight-rail-horizontal-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/straight-rail/straight-rail-horizontal-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/straight-rail/straight-rail-horizontal-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/straight-rail/straight-rail-horizontal-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/straight-rail/straight-rail-vertical-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/straight-rail/straight-rail-vertical-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/straight-rail/straight-rail-vertical-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/straight-rail/straight-rail-vertical-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/straight-rail/straight-rail-horizontal-metals.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/straight-rail/straight-rail-horizontal-backplates.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/straight-rail/straight-rail-horizontal-ties.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/straight-rail/straight-rail-horizontal-stone-path.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[substation]]--
@@ -753,6 +800,7 @@ function RecursiveOverrideBaseTextures(t)
 		elseif type(v) == "table" then
 			t[#t + 1] = v
 			RecursiveOverrideBaseTextures(t)
+			require("util")
 			t[#t] = nil
 		end
 	end

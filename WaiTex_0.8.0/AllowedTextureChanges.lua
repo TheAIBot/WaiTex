@@ -1,6 +1,6 @@
 --Allowed textures to change
 
-LimitTo1GB = true
+LimitTo1GB = false
 
 TexturePermissions =
 {
@@ -11,7 +11,7 @@ TexturePermissions =
 	["basic-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["basic-mining-drill"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["basic-splitter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
-	--["basic-transport-belt"] = 				{["enabled"] = false,["AllowedIn1GB"] = true},  --WIP
+	["basic-transport-belt"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["basic-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["basic-accumulator"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["big-electric-pole"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
@@ -31,15 +31,17 @@ TexturePermissions =
 	["copper-ore"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["curved-rail"] = 						{["enabled"] = false,["AllowedIn1GB"] = true},  --WIP
 	["decorative"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
-	["diesel-locomotive"] = 				{["enabled"] = true, ["AllowedIn1GB"] = false}, -- 1GB
+	["diesel-locomotive"] = 				{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["electric-furnace"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["express-splitter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["express-transport-belt"] =		 	{["enabled"] = false, ["AllowedIn1GB"] = true}, --WIP
 	["express-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["fast-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["fast-splitter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
+	["fast-transport-belt"] =			 	{["enabled"] = false, ["AllowedIn1GB"] = true}, --WIP
 	["fast-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["gate"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["gun-turret"] = 						{["enabled"] = false,["AllowedIn1GB"] = true}, -- WIP
+	["gun-turret"] = 						{["enabled"] = false,["AllowedIn1GB"] = true}, --WIP
 	["iron-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["iron-ore"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["lab"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
@@ -59,7 +61,7 @@ TexturePermissions =
 	["pumpjack"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["radar"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["rail-chain-signal"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["player"] = 							{["enabled"] = true, ["AllowedIn1GB"] = false}, --cropcache.dat -- 1GB
+	["player"] = 							{["enabled"] = true, ["AllowedIn1GB"] = false}, --cropcache.dat --1GB
 	["rail-signal"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["roboport"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["rocket-silo"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
@@ -70,7 +72,7 @@ TexturePermissions =
 	["smart-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["smart-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["solar-panel"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["spitter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false},  --1GB
+	["spitter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["steam-engine"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["steel-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["steel-furnace"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
@@ -85,5 +87,9 @@ TexturePermissions =
 	["tree"] = 								{["enabled"] = false,["AllowedIn1GB"] = false}, --WIP 1GB
 	["wooden-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true}
 	
-	-- 
+	-- Added better mod support
+	-- Added basic transport belt
+	-- Added fast transport belt
+	-- added express transport belt
+	-- Changed to the new steel furnace
 }

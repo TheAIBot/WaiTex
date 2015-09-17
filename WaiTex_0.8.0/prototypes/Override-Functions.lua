@@ -34,8 +34,8 @@ end
 
 function ScaleSprite(t, modifier)
 	modifier = modifier or 2
-	t.width = t.width * modifier
-	t.height = t.height * modifier
+	t.width = math.floor(t.width * modifier)
+	t.height = math.floor(t.height * modifier)
 	t.scale = 1 / modifier
 	
 	if t.y ~= nil then
@@ -64,7 +64,7 @@ end
 
 function AllowChange(name)
 	if TexturePermissions[name] == nil then
-		return false
+		return true
 	end
 	local tex = TexturePermissions[name]
 	return (tex.enabled and ((not LimitTo1GB) or tex.AllowedIn1GB))
@@ -76,12 +76,6 @@ function IsBaseTexture(t)
 	else
 		return string.find(t.filenames[1], "__base__")
 	end
-end
-
-function ConvertToLayers(t, key, directions, prefix, postfix, count, width, height)
-	CreateLayers(t, key, directions)
-	local filepaths = CreateFilePaths(prefix, postfix, count)
-	AddStripes(t, width, height, filepaths)
 end
 
 function AddStripes(t, width, height, filenames)
