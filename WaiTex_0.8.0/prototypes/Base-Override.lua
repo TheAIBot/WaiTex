@@ -165,11 +165,11 @@ ChangeTextureConfiguration =
 	
 	--[[car]]--
 	["__base__/graphics/entity/car/car-1.png"] = function(t)
-		if #t > 2 and t[#t - 1].stripes ~= nil then
+		if #t > 1 and t[#t - 2].stripes ~= nil then
 			ScaleSprite(t[#t - 2])
 			ChangeAnimation(t[#t], 4, 11)
-			ChangeAnimation(t[#t - 1].stripes[2], 4, 11)
-			ChangeAnimation(t[#t - 1].stripes[3], 4, 10)
+			ChangeAnimation(t[#t - 2].stripes[2], 4, 11)
+			ChangeAnimation(t[#t - 2].stripes[3], 4, 10)
 		end
 	end,
 	["__base__/graphics/entity/car/car-turret.png"] = function(t)  OverrideSprite(t[#t]) end,
