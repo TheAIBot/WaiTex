@@ -1,6 +1,6 @@
 require("prototypes.Override-Functions")
 
-ChangeTextureConfiguration = 
+local ChangeTextureConfiguration = 
 {
 	--[[assembling-machine-1]]--
 	["__base__/graphics/entity/assembling-machine-1/assembling-machine-1.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -790,10 +790,29 @@ ChangeTextureConfiguration =
 	["__base__/graphics/entity/wooden-chest/wooden-chest.png"] = function(t)  OverrideSprite(t[#t]) end,
 }
 
+local BannedTypes = 
+{
+	["technology"] = true,
+	["item"] = true,
+	["recipe"] = true,
+	["item-subgroup"] = true,
+	["decorative"] = true,
+	["tree"] = true,
+	["ammo"] = true,
+	["armor"] = true,
+	["gun"] = true,
+	["virtual-signal"] = true,
+	["autoplace-control"] = true,
+	["ammo-category"] = true,
+	["recipe-category"] = true,
+	["ambient-sound"] = true,
+	["projectile"] = true
+}
+
 function RecursiveOverrideBaseTextures(t)
 	for k,v in pairs(t[#t]) do
 		if type(v) == "string" then
-			if ChangeTextureConfiguration[v] ~= nil then
+			if ChangeTextureConfiguration[v] ~= nil and k ~= "icon" then
 				ChangeTextureConfiguration[v](t)
 				return
 			end
@@ -808,12 +827,11 @@ end
 
 for k,v in pairs(data.raw) do
 	for k1,v1 in pairs(v) do
-		if AllowChange(v1.name) == true then
+		if not BannedTypes[v1.type] and AllowChange(v1.name) then
 			RecursiveOverrideBaseTextures({v1})
 		end
 	end
 end
-
 
 --trees are a special case because there is so many files for them. Therefore they are checked here but only if they are of the type tree
 if AllowChange("tree") then
