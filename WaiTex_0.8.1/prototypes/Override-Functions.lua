@@ -70,12 +70,8 @@ function AllowChange(name)
 	return (tex.enabled and ((not LimitTo1GB) or tex.AllowedIn1GB))
 end
 
-function IsBaseTexture(t)
-	if t.filename ~= nil then
-		return string.find(t.filename, "__base__")
-	else
-		return string.find(t.filenames[1], "__base__")
-	end
+function IsBase(filepath)
+	return string.find(filepath, "__base__")
 end
 
 function AddStripes(t, width, height, filenames)
@@ -135,6 +131,10 @@ function ChangeSettings(t, settingsChanges)
 	for _,v in pairs(settingsChanges) do
 		t[v[1]] = v[2]
 	end
+end
+
+function ChangeIcon(t)
+	t.icon = string.gsub(t.icon, "__base__", "__WaiTex__")
 end
 
 
