@@ -1,6 +1,6 @@
 --Allowed textures to change
 
-LimitTo1GB = false
+LimitTo1GB = true
 
 TexturePermissions =
 {
@@ -14,10 +14,10 @@ TexturePermissions =
 	["basic-transport-belt"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["basic-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["basic-accumulator"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["beam"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["blood-particle"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["blue-laser"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["branch-particle"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
+	["beam"] = 								{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
+	["blood-particle"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
+	["blue-laser"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
+	["branch-particle"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
 	["big-electric-pole"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["biter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["boiler"] = 							{["enabled"] = false,["AllowedIn1GB"] = true},  --WIP
@@ -27,8 +27,8 @@ TexturePermissions =
 	["cargo-wagon"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["chemical-plant"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["coal"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["coal-particle"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["copper-ore-particle"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
+	["coal-particle"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
+	["copper-ore-particle"] = 				{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
 	["combinator"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["crude-oil"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
 	["defender"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
@@ -43,10 +43,10 @@ TexturePermissions =
 	["express-splitter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["express-transport-belt"] =		 	{["enabled"] = false, ["AllowedIn1GB"] = true}, --WIP
 	["express-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["explosion"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["explosion-gunshot"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["explosion-hit"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["explosive-rocket"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
+	["explosion"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
+	["explosion-gunshot"] = 				{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
+	["explosion-hit"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
+	["explosive-rocket"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
 	["fast-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["fast-splitter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["fast-transport-belt"] =			 	{["enabled"] = false,["AllowedIn1GB"] = true}, --WIP
@@ -58,7 +58,7 @@ TexturePermissions =
 	["iron-ore"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["lab"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["land-mine"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["laser-turret"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true}, --WIP --NEWNEW
+	["laser-turret"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --WIP --NEWNEW
 	["logistic-chest-passive-provider"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["logistic-chest-active-provider"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["logistic-chest-storage"] = 			{["enabled"] = true, ["AllowedIn1GB"] = true},
@@ -67,7 +67,7 @@ TexturePermissions =
 	["long-handed-inserter"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["market"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
 	["medium-electric-pole"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["medium-explosion"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
+	["medium-explosion"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
 	["offshore-pump"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["oil-refinery"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["pipe"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
@@ -85,13 +85,13 @@ TexturePermissions =
 	["small-electric-pole"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["small-lamp"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["small-pump"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["scorchmark"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
+	["scorchmark"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
 	["slowdown-sticker"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
-	["ship-wreck"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
+	["ship-wreck"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
 	["smart-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["smart-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["solar-panel"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["sparks"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
+	["sparks"] = 							{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
 	["spitter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["steam-engine"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["steel-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
@@ -106,7 +106,7 @@ TexturePermissions =
 	["tank"] = 								{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["train-stop"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["tree"] = 								{["enabled"] =false, ["AllowedIn1GB"] = false}, --WIP 1GB
-	["water-splash"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
+	["water-splash"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false},  --NEWNEW
 	["wooden-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true}
 	
 	-- Added better mod support
