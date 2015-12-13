@@ -496,7 +496,7 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[gun-turret]]--
-	----[[
+	--[[
 	["__base__/graphics/entity/gun-turret/gun-turret-gun-extension.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/gun-turret/gun-turret-gun-1.png"] = function(t)
 		if #t > 2 then

@@ -53,7 +53,7 @@ TexturePermissions =
 	["fast-transport-belt-to-ground"] = 	{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["flame-thrower-explosion"] = 			{["enabled"] = true, ["AllowedIn1GB"] = true},  --NEWNEW
 	["gate"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
-	["gun-turret"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true}, --WIP --NEWNEW
+	["gun-turret"] = 						{["enabled"] = false,["AllowedIn1GB"] = true}, --WIP --NEWNEW
 	["iron-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["iron-ore"] = 							{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["lab"] = 								{["enabled"] = true, ["AllowedIn1GB"] = true},
