@@ -36,7 +36,7 @@ function ScaleSprite(t, modifier)
 	modifier = modifier or 2
 	t.width = math.floor(t.width * modifier)
 	t.height = math.floor(t.height * modifier)
-	t.scale = 1 / modifier
+	t.scale = (t.scale or 1) / modifier
 	
 	if t.y ~= nil then
 		t.y = t.y * modifier
@@ -97,11 +97,39 @@ function AddStripes(t, width, height, filenames)
 	end
 end
 
-function CreateFilePaths(prefix, postfix, count, start)
+function MergeTables(t1, t2)
+	local t3 = {}
+	for i = 1,#t1 do
+		t3[#t3 + 1] = t1[i]
+	end
+	for i = 1,#t2 do
+		t3[#t3 + 1] = t2[i]
+	end
+	return t3
+end
+
+function StripMerge(t1, t2, length, stripLength1, stripLength2)
+		local combined = {}
+		for i = 0,length - 1 do
+			for x = 1,stripLength1 do
+				combined[#combined + 1] = t1[i * stripLength1 + x]
+			end
+			for x = 1,stripLength2 do
+				combined[#combined + 1] = t2[i * stripLength2 + x]
+			end
+		end
+		return combined
+	end
+
+function CreateFilePaths(prefix, postfix, count, start, width, height)
 	paths = {}
 	start = start or 1
 	for i = start, start - 1 + count do
-		paths[i] = prefix..tostring(i)..postfix
+		if width == nil then
+			paths[i] = prefix..tostring(i)..postfix
+		else
+			paths[i] = { prefix..tostring(i)..postfix, width, height}
+		end
 	end
 	return paths
 end

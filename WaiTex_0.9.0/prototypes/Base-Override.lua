@@ -201,6 +201,62 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/big-electric-pole/big-electric-pole.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
+	--[[big-biter]]--
+	["__base__/graphics/entity/biter/biter-run-1.png"] = function(t) 
+		if #t > 2 then
+			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-1/biter-run-1-", ".png", 128)
+			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-2/biter-run-2-", ".png", 128)
+			local combined = StripMerge(part1, part2, 16, 8, 8)
+			
+			AddStripes(t[#t - 2], 1, 1, combined)
+		end
+	end,
+	["__base__/graphics/entity/biter/biter-run-mask1.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-mask1/biter-run-mask1-", ".png", 256))
+	end,
+	["__base__/graphics/entity/biter/biter-run-mask2.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-mask2/biter-run-mask2-", ".png", 256))
+	end,
+	["__base__/graphics/entity/biter/biter-attack-1.png"] = function(t) 
+		if #t > 2 then
+			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-1/biter-attack-1-", ".png", 48)
+			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-2/biter-attack-2-", ".png", 40)
+			local part3 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-3/biter-attack-3-", ".png", 48)
+			local part4 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-4/biter-attack-4-", ".png", 40)
+			local combined1 = StripMerge(part1, part2, 8, 6, 5)
+			local combined2 = StripMerge(part3, part4, 8, 6, 5)
+			local combined  = MergeTables(combined1, combined2)
+			
+			AddStripes(t[#t - 2], 1, 1, combined)
+		end
+	end,
+	["__base__/graphics/entity/biter/biter-attack-mask1.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-mask1/biter-attack-mask1-", ".png", 176))
+	end,
+	["__base__/graphics/entity/biter/biter-attack-mask2.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-mask2/biter-attack-mask2-", ".png", 176))
+	end,
+	["__base__/graphics/entity/biter/biter-die-1.png"] = function(t) 
+		if #t > 2 then
+			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-1/biter-die-1-", ".png", 72)
+			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-2/biter-die-2-", ".png", 64)
+			local part3 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-3/biter-die-3-", ".png", 72)
+			local part4 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-4/biter-die-4-", ".png", 64)
+			local combined1 = StripMerge(part1, part2, 8, 9, 8)
+			local combined2 = StripMerge(part3, part4, 8, 9, 8)
+			local combined  = MergeTables(combined1, combined2)
+			
+			AddStripes(t[#t - 2], 1, 1, combined)
+		end
+	end,
+	["__base__/graphics/entity/biter/biter-die-mask1.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-mask1/biter-die-mask1-", ".png", 272))
+	end,
+	["__base__/graphics/entity/biter/biter-die-mask2.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-mask2/biter-die-mask2-", ".png", 272))
+	end,
+	
+	
 	--[[boiler]]--
 	["__base__/graphics/entity/boiler/boiler-left.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/boiler/boiler-down.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -372,44 +428,21 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[express-transport-belt]]--
-	--[[
-	--["__base__/graphics/entity/express-transport-belt/express-transport-belt.png"] = function(t)
-		--local fisk = table.deepcopy(t[#t])
-		t[#t].priority = "extra-high"
-		t[#t].width = 40 * 2
-		t[#t].height = 40 * 2
-		t[#t].frame_count = 16
-		t[#t].filename = nil
-		--t[#t].direction_count = 0
-		t[#t].stripes = 
-		{
-			{
-				filename = "__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
-				width_in_frames = 16,
-				height_in_frames = 1,
-				y = (t[#t].y or 0) * 2
-			},
-			{
-				filename = "__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
-				width_in_frames = 16,
-				height_in_frames = 1,
-				y = ((t[#t].y or 0) * 2) + t[#t].height
-			}
-		}	
-		t[#t].y = nil
-		--t[#t] = fisk
-		--[[
+	["__base__/graphics/entity/express-transport-belt/express-transport-belt.png"] = function(t)
+		if t[#t].direction_count == nil then
 		AddStripes(t[#t], 16, 1, 
 		{
 			"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
 			"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png"
 		})
-		t[#t].frame_count = 32
 		t[#t].stripes[1].y = (t[#t].y or 0) * 2
 		t[#t].stripes[2].y = ((t[#t].y or 0) * 2) + t[#t].height
-		]]
-	--end,
-	--]]
+		t[#t].y = nil
+		else
+			OverrideSprite(t[#t])
+			t[#t].line_length = 16
+		end
+	end,
 	
 	
 	--[[express-transport-belt-to-ground]]--
@@ -455,7 +488,21 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[fast-transport-belt]]--
-	
+	["__base__/graphics/entity/fast-transport-belt/fast-transport-belt.png"] = function(t)
+		if t[#t].direction_count == nil then
+		AddStripes(t[#t], 16, 1, 
+		{
+			"__WaiTex__/graphics/entity/fast-transport-belt/fast-transport-belt.png",
+			"__WaiTex__/graphics/entity/fast-transport-belt/fast-transport-belt.png"
+		})
+		t[#t].stripes[1].y = (t[#t].y or 0) * 2
+		t[#t].stripes[2].y = ((t[#t].y or 0) * 2) + t[#t].height
+		t[#t].y = nil
+		else
+			OverrideSprite(t[#t])
+			t[#t].line_length = 16
+		end
+	end,
 	
 	--[[fast-transport-belt-to-ground]]--
 	["__base__/graphics/entity/fast-transport-belt-to-ground/fast-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -496,16 +543,16 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[gun-turret]]--
-	--[[
 	["__base__/graphics/entity/gun-turret/gun-turret-gun-extension.png"] = function(t)  OverrideSprite(t[#t]) end,
+		["__base__/graphics/entity/gun-turret/gun-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/gun-turret/gun-turret-gun-1.png"] = function(t)
 		if #t > 2 then
-			t[#t - 2].frame_count = 1
-			AddStripes(t[#t - 2], 8, 1, CreateFilePaths("__WaiTex__/graphics/entity/gun-turret/gun-turret-gun-", ".png", 16))
+			AddStripes(t[#t - 2], t[#t - 2].frame_count, 16, CreateFilePaths("__WaiTex__/graphics/entity/gun-turret/gun-turret-gun-", ".png", 4))
 		end
 	end,
-	["__base__/graphics/entity/gun-turret/gun-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
-	--]]
+	["__base__/graphics/entity/gun-turret/gun-turret-gun-mask.png"] = function(t)
+		AddStripes(t[#t], t[#t].frame_count, 32, CreateFilePaths("__WaiTex__/graphics/entity/gun-turret/gun-turret-gun-mask-", ".png", 2))
+	end,
 	
 	
 	--[[iron-chest]]--
@@ -798,10 +845,22 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[smart-inserter]]--
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/smart-inserter/smart-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	--["__base__/graphics/entity/smart-inserter/smart-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	--["__base__/graphics/entity/smart-inserter/smart-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-closed.png"] = function(t) 
+		t[#t].priority = "extra-high-no-scale"
+		OverrideSprite(t[#t]) 
+	end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-open.png"] = function(t) 
+		t[#t].priority = "extra-high-no-scale"
+		OverrideSprite(t[#t]) 
+	end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-platform.png"] = function(t)  
+		t[#t].priority = "extra-high-no-scale"
+		OverrideSprite(t[#t]) 
+	end,
 	
 	
 	--[[solar-panel]]--
@@ -974,6 +1033,53 @@ local ChangeTextureConfiguration =
 	
 	--[[wooden-chest]]--
 	["__base__/graphics/entity/wooden-chest/wooden-chest.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[worm]]--
+	["__base__/graphics/entity/worm/worm-folded.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/worm/worm-folded-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/worm/worm-preparing-01.png"] = function(t)
+		if #t > 2 then
+			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-preparing-01/worm-preparing-01-", ".png", 14)
+			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-preparing-02/worm-preparing-02-", ".png", 12)
+			local combined = MergeTables(part1, part2)
+			
+			AddStripes(t[#t - 2], 1, 1, combined)
+		end
+	end,
+	["__base__/graphics/entity/worm/worm-preparing-mask.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-preparing-mask/worm-preparing-mask-", ".png", 26))
+	end,
+	["__base__/graphics/entity/worm/worm-prepared.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-prepared/worm-prepared-", ".png", 10))
+	end,
+	["__base__/graphics/entity/worm/worm-prepared-mask.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-prepared-mask/worm-prepared-mask-", ".png", 10))
+	end,
+	["__base__/graphics/entity/worm/worm-attack-01.png"] = function(t)
+		if #t > 2 then
+			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-01/worm-attack-01-", ".png", 64)
+			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-02/worm-attack-02-", ".png", 64)
+			local combined = MergeTables(part1, part2)
+			
+			AddStripes(t[#t - 2], 1, 1, combined)
+		end
+	end,
+	["__base__/graphics/entity/worm/worm-attack-mask-01.png"] = function(t)
+		if #t > 2 then
+			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-mask-01/worm-attack-mask-01-", ".png", 64)
+			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-mask-02/worm-attack-mask-02-", ".png", 64)
+			local combined = MergeTables(part1, part2)
+			
+			AddStripes(t[#t - 2], 1, 1, combined)
+		end
+	end,
+	["__base__/graphics/entity/worm/worm-die.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-die/worm-die-", ".png", 24))
+	end,
+	["__base__/graphics/entity/worm/worm-die-mask.png"] = function(t)
+		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-die-mask/worm-die-mask-", ".png", 24))
+	end,
 }
 
 local BannedTypes = 
@@ -992,7 +1098,8 @@ local BannedTypes =
 	["ammo-category"] = true,
 	["recipe-category"] = true,
 	["ambient-sound"] = true,
-	["projectile"] = true
+	["projectile"] = true,
+	--["unit"] = true -- used to ban biter textures for now because they are implemented
 }
 
 function RecursiveOverrideBaseTextures(t)
