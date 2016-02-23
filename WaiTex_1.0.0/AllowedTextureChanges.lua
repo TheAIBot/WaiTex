@@ -20,7 +20,7 @@ TexturePermissions =
 	["branch-particle"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB  
 	["big-electric-pole"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["big-biter"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB --NEWNEW
-	["biter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["biter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB --UPDATED
 	["boiler"] = 							{["enabled"] = false,["AllowedIn1GB"] = true},  --WIP
 	["burner-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["burner-mining-drill"] = 				{["enabled"] = true, ["AllowedIn1GB"] = true},
@@ -93,7 +93,8 @@ TexturePermissions =
 	["smart-inserter"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["solar-panel"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["sparks"] = 							{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB  
-	["spitter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
+	["spitter-spawner"] = 					{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB --UPDATED
+	["spitter"] = 							{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB --NEWNEW
 	["steam-engine"] = 						{["enabled"] = true, ["AllowedIn1GB"] = false}, --1GB
 	["steel-chest"] = 						{["enabled"] = true, ["AllowedIn1GB"] = true},
 	["steel-furnace"] = 					{["enabled"] = true, ["AllowedIn1GB"] = true},

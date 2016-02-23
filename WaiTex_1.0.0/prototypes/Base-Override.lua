@@ -206,7 +206,7 @@ local ChangeTextureConfiguration =
 		if #t > 2 then
 			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-1/biter-run-1-", ".png", 128)
 			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-2/biter-run-2-", ".png", 128)
-			local combined = StripMerge(part1, part2, 16, 8, 8)
+			local combined = StripMerge({part1, part2}, 16, {8, 8})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
@@ -223,9 +223,9 @@ local ChangeTextureConfiguration =
 			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-2/biter-attack-2-", ".png", 40)
 			local part3 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-3/biter-attack-3-", ".png", 48)
 			local part4 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-4/biter-attack-4-", ".png", 40)
-			local combined1 = StripMerge(part1, part2, 8, 6, 5)
-			local combined2 = StripMerge(part3, part4, 8, 6, 5)
-			local combined  = MergeTables(combined1, combined2)
+			local combined1 = StripMerge({part1, part2}, 8, {6, 5})
+			local combined2 = StripMerge({part3, part4}, 8, {6, 5})
+			local combined  = MergeTables({combined1, combined2})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
@@ -242,9 +242,9 @@ local ChangeTextureConfiguration =
 			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-2/biter-die-2-", ".png", 64)
 			local part3 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-3/biter-die-3-", ".png", 72)
 			local part4 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-4/biter-die-4-", ".png", 64)
-			local combined1 = StripMerge(part1, part2, 8, 9, 8)
-			local combined2 = StripMerge(part3, part4, 8, 9, 8)
-			local combined  = MergeTables(combined1, combined2)
+			local combined1 = StripMerge({part1, part2}, 8, {9, 8})
+			local combined2 = StripMerge({part3, part4}, 8, {9, 8})
+			local combined  = MergeTables({combined1, combined2})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
@@ -877,39 +877,65 @@ local ChangeTextureConfiguration =
 	
 	--[[biter-spawner and spitter-spawner]]--
 	["__base__/graphics/entity/spawner/spawner-idle.png"] = function(t)
-		if (#t > 2 and #t[#t - 3] == 4 and t[#t - 3][2].layers ~= nil and t[#t - 3][2].layers[1] ~= nil and
-			t[#t - 3][3].layers ~= nil and t[#t - 3][3].layers[1] ~= nil and
-			t[#t - 3][4].layers ~= nil and t[#t - 3][4].layers[1] ~= nil) then
-			AddStripes(t[#t], 4, 1,
-			{
-				"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-1.png",
-				"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-2.png",
-			})
-			ChangeSettings(t[#t], {{"line_length", nil}, {"y", nil}})
-	
-			AddStripes(t[#t - 3][2].layers[1], 4, 1,
-			{
-				"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-3.png",
-				"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-4.png",
-			})
-			ChangeSettings(t[#t - 3][2].layers[1], {{"line_length", nil}, {"y", nil}})
-	
-			AddStripes(t[#t - 3][3].layers[1], 4, 1,
-			{
-				"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-5.png",
-				"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-6.png",
-			})
-			ChangeSettings(t[#t - 3][3].layers[1], {{"line_length", nil}, {"y", nil}})
-	
-			AddStripes(t[#t - 3][4].layers[1], 4, 1,
-			{
-				"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-7.png",
-				"__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-8.png",
-			})
-			ChangeSettings(t[#t - 3][4].layers[1], {{"line_length", nil}, {"y", nil}})
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-", ".png")
+	end,
+	["__base__/graphics/entity/spawner/spawner-idle-mask.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/spawner/spawner-idle-mask/spawner-idle-mask-", ".png")
+	end,
+	["__base__/graphics/entity/spawner/spawner-die-01.png"] = function(t)
+		if #t > 2 then
+			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spawner/spawner-die-0&/spawner-die-0&-")
+		end
+	end,
+	["__base__/graphics/entity/spawner/spawner-die-mask-01.png"] = function(t)
+		if #t > 2 then
+			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spawner/spawner-die-mask-0&/spawner-die-mask-0&-")
 		end
 	end,
 	
+	
+	
+	
+	
+	
+	
+	
+	--[[spitter]]--
+	["__base__/graphics/entity/spitter/spitter-attack-1.png"] = function(t)
+		if #t > 2 then
+			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-attack-&/spitter-attack-&-")
+		end
+	end,
+	["__base__/graphics/entity/spitter/spitter-attack-mask-1.png"] = function(t)
+		if #t > 2 then
+			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-attack-mask-&/spitter-attack-mask-&-")
+		end
+	end,
+	["__base__/graphics/entity/spitter/spitter-run-1.png"] = function(t)
+		if #t > 2 then
+			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-run-&/spitter-run-&-")
+		end
+	end,
+	["__base__/graphics/entity/spitter/spitter-run-mask.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/spitter/spitter-run-mask/spitter-run-mask-")
+	end,
+	["__base__/graphics/entity/spitter/spitter-die-1.png"] = function(t)
+		if #t > 2 then
+			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-die-&/spitter-die-&-")
+		end
+	end,
+	["__base__/graphics/entity/spitter/spitter-die-mask-1.png"] = function(t)
+		if #t > 2 then
+			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-die-mask-&/spitter-die-mask-&-")
+		end
+	end,
+	
+	
+	
+	
+	
+	
+
 	
 	--[[steam-engine]]--
 	["__base__/graphics/entity/steam-engine/steam-engine-horizontal.png"] = function(t)
@@ -1042,7 +1068,7 @@ local ChangeTextureConfiguration =
 		if #t > 2 then
 			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-preparing-01/worm-preparing-01-", ".png", 14)
 			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-preparing-02/worm-preparing-02-", ".png", 12)
-			local combined = MergeTables(part1, part2)
+			local combined = MergeTables({part1, part2})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
@@ -1060,7 +1086,7 @@ local ChangeTextureConfiguration =
 		if #t > 2 then
 			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-01/worm-attack-01-", ".png", 64)
 			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-02/worm-attack-02-", ".png", 64)
-			local combined = MergeTables(part1, part2)
+			local combined = MergeTables({part1, part2})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
@@ -1069,7 +1095,7 @@ local ChangeTextureConfiguration =
 		if #t > 2 then
 			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-mask-01/worm-attack-mask-01-", ".png", 64)
 			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-mask-02/worm-attack-mask-02-", ".png", 64)
-			local combined = MergeTables(part1, part2)
+			local combined = MergeTables({part1, part2})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
