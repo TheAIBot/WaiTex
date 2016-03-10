@@ -430,17 +430,21 @@ local ChangeTextureConfiguration =
 	--[[express-transport-belt]]--
 	["__base__/graphics/entity/express-transport-belt/express-transport-belt.png"] = function(t)
 		if t[#t].direction_count == nil then
-		AddStripes(t[#t], 16, 1, 
-		{
-			"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
-			"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png"
-		})
-		t[#t].stripes[1].y = (t[#t].y or 0) * 2
-		t[#t].stripes[2].y = ((t[#t].y or 0) * 2) + t[#t].height
-		t[#t].y = nil
+			local y = t[#t].y or 0
+			AddStripes(t[#t], 16, 1, 
+			{
+				"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
+				"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png"
+			})
+			t[#t].stripes[1].y = y * 2
+			t[#t].stripes[2].y = (y * 2) + t[#t].height
+			t[#t].y = y * 2
+			--t[#t].direction_count = 1
+			--print(serpent.block(t[#t]))
 		else
 			OverrideSprite(t[#t])
 			t[#t].line_length = 16
+			--print("hit hit hit hit")
 		end
 	end,
 	
@@ -490,14 +494,15 @@ local ChangeTextureConfiguration =
 	--[[fast-transport-belt]]--
 	["__base__/graphics/entity/fast-transport-belt/fast-transport-belt.png"] = function(t)
 		if t[#t].direction_count == nil then
-		AddStripes(t[#t], 16, 1, 
-		{
-			"__WaiTex__/graphics/entity/fast-transport-belt/fast-transport-belt.png",
-			"__WaiTex__/graphics/entity/fast-transport-belt/fast-transport-belt.png"
-		})
-		t[#t].stripes[1].y = (t[#t].y or 0) * 2
-		t[#t].stripes[2].y = ((t[#t].y or 0) * 2) + t[#t].height
-		t[#t].y = nil
+			local y = t[#t].y or 0
+			AddStripes(t[#t], 16, 1, 
+			{
+				"__WaiTex__/graphics/entity/fast-transport-belt/fast-transport-belt.png",
+				"__WaiTex__/graphics/entity/fast-transport-belt/fast-transport-belt.png"
+			})
+			t[#t].stripes[1].y = y * 2
+			t[#t].stripes[2].y = (y * 2) + t[#t].height
+			t[#t].y = y * 2
 		else
 			OverrideSprite(t[#t])
 			t[#t].line_length = 16
@@ -1133,12 +1138,12 @@ function RecursiveOverrideBaseTextures(t)
 		if type(v) == "string" then
 			if ChangeTextureConfiguration[v] ~= nil and k ~= "icon" then
 				ChangeTextureConfiguration[v](t)
-				return
+				return true
 			end
 		elseif type(v) == "table" then
 			t[#t + 1] = v
 			RecursiveOverrideBaseTextures(t)
-			require("util")
+			--require("util")
 			t[#t] = nil
 		end
 	end
@@ -1151,6 +1156,9 @@ for k, v in pairs(data.raw) do
 		end
 	end
 end
+
+
+
 --[[
 for k, v in pairs(data.raw.tile) do
 	if v.name == "deepwater" then

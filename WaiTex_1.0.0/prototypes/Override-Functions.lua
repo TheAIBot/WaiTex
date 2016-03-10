@@ -67,7 +67,7 @@ function AllowChange(name)
 		return true
 	end
 	local tex = TexturePermissions[name]
-	return (tex.enabled and ((not LimitTo1GB) or tex.AllowedIn1GB))
+	return (tex.enabled and (AvailableGB >= tex.requiredGB))
 end
 
 function IsBase(filepath)
