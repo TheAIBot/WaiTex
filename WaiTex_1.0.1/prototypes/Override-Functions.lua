@@ -171,19 +171,52 @@ function ChangeIcon(t)
 	t.icon = string.gsub(t.icon, "__base__", "__WaiTex__")
 end
 
+--i should really document how to function works as i
+--will probably use it a lot in the future, but i am
+--am too lazy to do it and the code is totally self explanatory!
 function TextureToSpritesConverter(t, pathTemplate)
 	if t.stripes ~= nil and t.frame_count ~= nil and t.direction_count ~= nil then
-		if CanConvertToSpriteStripe(t) then
+		if PatternMatchColumnAdditions(t) then
 			local numberOfStripMerges = GetStripeMerges(t)
 			local stripeSpritePaths = GetStripeSpritePaths(t, pathTemplate)
 			local stripMergedTogether = GetMergedStrips(t, numberOfStripMerges, stripeSpritePaths)
 			local orderedStripePaths = MergeTables(stripMergedTogether)
 			--print(serpent.block(orderedStripePaths))
 			AddStripes(t, 1, 1, orderedStripePaths)
+		else
+			local paths = {}
+			print("Herp a derp")
+			--print(#t.stripes)
+			--for u = 1, #t.stripes do
+			--	print(t.stripes[u].filename)
+			--end
+			local index = 1
+			--this code doesn't take line_length and such into consideration when deciding how many images to take
+			local spriteCount = 0
+			local width = 0
+			for i = 1, #t.stripes do
+				spriteCount = spriteCount + t.stripes[i].height_in_frames * t.stripes[i].width_in_frames
+				width = width + t.stripes[i].width_in_frames
+			end
+			for row = 1, t.stripes[1].height_in_frames do
+				for stripeNumber = 1, #t.stripes do
+					for col = 1, t.stripes[1].width_in_frames do
+						if index <= spriteCount then
+							local stripesPath = string.gsub(pathTemplate, "&", tostring(stripeNumber))
+							paths[#paths + 1] = CreateFilePaths(stripesPath, ".png", 1, (row - 1) * width + col)[1]
+							index = index + 1
+						end
+					end
+				end
+			end
+			for k, v in ipairs(paths) do
+				print(v)
+			end
+			AddStripes(t, 1, 1, paths)
 		end
 	elseif t.filename ~= nil and t.frame_count ~= nil then
 		local width = (t.line_length or t.frame_count)
-		local height = (t.direction_count or 1)
+		local height = (t.direction_count or 1) * (t.frame_count / (t.line_length or t.frame_count))
 		local startSpriteNumber = width * (((t.y or 0) / t.height)) + 1
 		local numberOfSprites = width * height
 		AddStripes(t, 1, 1, CreateFilePaths(pathTemplate, ".png", numberOfSprites, startSpriteNumber))
@@ -192,20 +225,26 @@ function TextureToSpritesConverter(t, pathTemplate)
 	end
 end
 
-function GetMergedStrips(t, numberOfStripMerges, stripeSpritePaths)
+function PatternMatchColumnAdditions(t)
 	local frameHeight = t.stripes[1].height_in_frames
-	local stripMergedTogether = {}
-	local stripMergeTablesLength = #t.stripes / numberOfStripMerges
-	for i = 0, numberOfStripMerges - 1 do
-		local tablesToStripMerge = {}
-		local tableLengths = {}
-		for x = 1 + stripMergeTablesLength * i, stripMergeTablesLength + stripMergeTablesLength * i do
-			tablesToStripMerge[#tablesToStripMerge + 1] = stripeSpritePaths[x]
-			tableLengths[#tableLengths + 1] = t.stripes[x].width_in_frames
+	for i = 2, #t.stripes do
+		if frameHeight ~= t.stripes[i].height_in_frames then
+			print("false")
+			return false
 		end
-		stripMergedTogether[i + 1] = StripMerge(tablesToStripMerge, frameHeight, tableLengths)
 	end
-	return stripMergedTogether
+	print("true")
+	return true
+end
+
+function GetStripeMerges(t)
+	local sum = 0
+	for i = 1,#t.stripes do
+		sum = sum + (t.line_length or t.stripes[i].width_in_frames)
+		if sum == t.frame_count then
+			return #t.stripes / i
+		end
+	end
 end
 
 function GetStripeSpritePaths(t, pathTemplate)
@@ -223,24 +262,20 @@ function GetStripeSpritePaths(t, pathTemplate)
 	return stripeSpritePaths
 end
 
-function GetStripeMerges(t)
-	local sum = 0
-	for i = 1,#t.stripes do
-		sum = sum + (t.line_length or t.stripes[i].width_in_frames)
-		if sum == t.frame_count then
-			return #t.stripes / i
-		end
-	end
-end
-
-function CanConvertToSpriteStripe(t)
+function GetMergedStrips(t, numberOfStripMerges, stripeSpritePaths)
 	local frameHeight = t.stripes[1].height_in_frames
-	for i = 2, #t.stripes do
-		if frameHeight ~= t.stripes[i].height_in_frames then
-			return false
+	local stripMergedTogether = {}
+	local stripMergeTablesLength = #t.stripes / numberOfStripMerges
+	for i = 0, numberOfStripMerges - 1 do
+		local tablesToStripMerge = {}
+		local tableLengths = {}
+		for x = 1 + stripMergeTablesLength * i, stripMergeTablesLength + stripMergeTablesLength * i do
+			tablesToStripMerge[#tablesToStripMerge + 1] = stripeSpritePaths[x]
+			tableLengths[#tableLengths + 1] = t.stripes[x].width_in_frames
 		end
+		stripMergedTogether[i + 1] = StripMerge(tablesToStripMerge, frameHeight, tableLengths)
 	end
-	return true
+	return stripMergedTogether
 end
 
 

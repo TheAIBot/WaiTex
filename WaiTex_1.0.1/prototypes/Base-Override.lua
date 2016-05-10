@@ -291,6 +291,22 @@ local ChangeTextureConfiguration =
 			ChangeAnimation(t[#t - 2].stripes[3], 4, 10)
 		end
 	end,
+	--["__base__/graphics/entity/car/car-1.png"] = function(t)
+	--	if #t > 2 then
+	--		print("sdfsfdsf")
+	--		TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/car/car-&/car-&-")
+	--	end
+	--end,
+	--["__base__/graphics/entity/car/car-mask-1.png"] = function(t)
+	--	if #t > 2 then
+	--		TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/car/car-mask-&/car-mask-&-")
+	--		t[#t] = nil
+	--		t[#t] = nil
+	--		--serpent.block(t[#t - 2])
+	--		--t[#t - 2] = nil
+	--		--t[#t - 3] = nil
+	--	end
+	--end,
 	["__base__/graphics/entity/car/car-turret.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
@@ -305,7 +321,7 @@ local ChangeTextureConfiguration =
 	end,
 	
 	
-	--[[cargo-wagon]]--
+	--[[chemical-plant]]--
 	["__base__/graphics/entity/chemical-plant/chemical-plant.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
@@ -722,50 +738,116 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[player]]--
-		--[[level 1]]--
 	["__base__/graphics/entity/player/player-basic-idle.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-idle/player-basic-idle-", ".png", 176))
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-idle/player-basic-idle-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-basic-idle-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-idle-color/player-basic-idle-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-idle-gun.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-idle-gun/player-basic-idle-gun-", ".png", 176))
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-idle-gun/player-basic-idle-gun-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-basic-idle-gun-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-idle-gun-color/player-basic-idle-gun-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-mine.png"] = function(t)
-		OverrideSprite(t[#t], nil, "__WaiTex__/graphics/entity/player/player-basic-mine.png")
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-mine/player-basic-mine-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-basic-mine-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-mine-color/player-basic-mine-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-mine-tool.png"] = function(t)
-		AddStripes(t[#t], nil, nil, (function()
-			result = {}
-			for i = 1, 16 do
-				result[#result + 1] = {"__WaiTex__/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-"..tostring(i).."-1.png", 7, 1}
-				result[#result + 1] = {"__WaiTex__/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-"..tostring(i).."-2.png", 6, 1}
-			end
-			return result
-		end)())
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-", ".png")
 	end,
-		["__base__/graphics/entity/player/player-basic-run-gun.png"] = function(t)
-		AddStripes(t[#t], 11, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-run-gun/player-basic-run-gun-", ".png", 36))
+	["__base__/graphics/entity/player/player-basic-mine-tool-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-mine-tool-color/player-basic-mine-tool-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-basic-run-gun.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-run-gun/player-basic-run-gun-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-basic-run-gun-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-run-gun-color/player-basic-run-gun-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-run.png"] = function(t)
-		AddStripes(t[#t], 11, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-basic-run/player-basic-run-", ".png", 16))
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-run/player-basic-run-", ".png")
 	end,
-		--[[level 2]]--
-	["__base__/graphics/entity/player/player-armor1-idle.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/player/player-armor1-idle-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/player/player-armor1-mine.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-basic-run-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-run-color/player-basic-run-color-", ".png")
+	end,
+	
+	["__base__/graphics/entity/player/player-armor1-idle.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-idle/player-armor1-idle-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-idle-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-idle-color/player-armor1-idle-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-idle-gun.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-idle-gun/player-armor1-idle-gun-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-idle-gun-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-idle-gun-color/player-armor1-idle-gun-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-mine.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-mine/player-armor1-mine-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-mine-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-mine-color/player-armor1-mine-color-", ".png")
+	end,
 	["__base__/graphics/entity/player/player-armor1-mine-tool.png"] = function(t)
-		AddStripes(t[#t], 13, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-armor1-mine-tool/player-armor1-mine-tool-", ".png", 16))
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-mine-tool/player-armor1-mine-tool-", ".png")
 	end,
-	["__base__/graphics/entity/player/player-armor1-run-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/player/player-armor1-run.png"] = function(t)  OverrideSprite(t[#t]) end,
-		--[[level 3]]--
-	["__base__/graphics/entity/player/player-armor2-idle.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/player/player-armor2-idle-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/player/player-armor2-mine.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor1-mine-tool-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-mine-tool-color/player-armor1-mine-tool-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-run-gun.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-run-gun/player-armor1-run-gun-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-run-gun-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-run-gun-color/player-armor1-run-gun-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-run.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-run/player-armor1-run-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor1-run-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-run-color/player-armor1-run-color-", ".png")
+	end,
+	
+	["__base__/graphics/entity/player/player-armor2-idle.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-idle/player-armor2-idle-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-idle-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-idle-color/player-armor2-idle-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-idle-gun.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-idle-gun/player-armor2-idle-gun-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-idle-gun-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-idle-gun-color/player-armor2-idle-gun-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-mine.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-mine/player-armor2-mine-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-mine-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-mine-color/player-armor2-mine-color-", ".png")
+	end,
 	["__base__/graphics/entity/player/player-armor2-mine-tool.png"] = function(t)
-		AddStripes(t[#t], 13, 1, CreateFilePaths("__WaiTex__/graphics/entity/player/player-armor2-mine-tool/player-armor2-mine-tool-", ".png", 16))
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-mine-tool/player-armor2-mine-tool-", ".png")
 	end,
-	["__base__/graphics/entity/player/player-armor2-run-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/player/player-armor2-run.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/player/player-armor2-mine-tool-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-mine-tool-color/player-armor2-mine-tool-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-run-gun.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-run-gun/player-armor2-run-gun-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-run-gun-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-run-gun-color/player-armor2-run-gun-color-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-run.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-run/player-armor2-run-", ".png")
+	end,
+	["__base__/graphics/entity/player/player-armor2-run-color.png"] = function(t)
+		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-run-color/player-armor2-run-color-", ".png")
+	end,
 	
 	
 	--[[rail-signal]]--
@@ -850,26 +932,15 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[smart-inserter]]--
-	--["__base__/graphics/entity/smart-inserter/smart-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	--["__base__/graphics/entity/smart-inserter/smart-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	--["__base__/graphics/entity/smart-inserter/smart-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-closed.png"] = function(t) 
-		t[#t].priority = "extra-high-no-scale"
-		OverrideSprite(t[#t]) 
-	end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-open.png"] = function(t) 
-		t[#t].priority = "extra-high-no-scale"
-		OverrideSprite(t[#t]) 
-	end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-platform.png"] = function(t)  
-		t[#t].priority = "extra-high-no-scale"
-		OverrideSprite(t[#t]) 
-	end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/smart-inserter/smart-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[solar-panel]]--
 	["__base__/graphics/entity/solar-panel/solar-panel.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
 	
 	--[[sparks]]--
 	["__base__/graphics/entity/sparks/sparks-01.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -1141,10 +1212,10 @@ function RecursiveOverrideBaseTextures(t)
 				return true
 			end
 		elseif type(v) == "table" then
-			t[#t + 1] = v
+			local index = #t + 1
+			t[index] = v
 			RecursiveOverrideBaseTextures(t)
-			--require("util")
-			t[#t] = nil
+			t[index] = nil
 		end
 	end
 end
@@ -1221,16 +1292,18 @@ if AllowChange("tree") then
 		for k,trees in pairs(data.raw["tree"]) do
 			if trees.variations then
 				for k1, treeVariations in pairs(trees.variations) do
-					OverrideSprite(treeVariations.leaves)
 					local filename = treeVariations.trunk.filename
-					filename = string.gsub(filename, ".png", "") -- not good to have it here... oh well
-					filename = string.gsub(filename, "__base__", "__WaiTex__")
-				
-					AddStripes(treeVariations.trunk, nil, nil, 
-					{
-						{filename.."-1.png", 3, 1},
-						{filename.."-2.png", 2, 1}
-					})
+					if IsBase(filename) then
+						OverrideSprite(treeVariations.leaves)
+						filename = string.gsub(filename, ".png", "") -- not good to have it here... oh well
+						filename = string.gsub(filename, "__base__", "__WaiTex__")
+					
+						AddStripes(treeVariations.trunk, nil, nil, 
+						{
+							{filename.."-1.png", 3, 1},
+							{filename.."-2.png", 2, 1}
+						})
+					end
 				end
 			end
 		end
