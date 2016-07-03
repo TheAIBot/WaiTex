@@ -17,16 +17,16 @@ function OverrideAllSprites(t, modifier)
 	end
 end
 
-function ManualOverrideSprite(t, width, height, modifier)
-	ChangeFileName(t)
+function ManualOverrideSprite(t, width, height, modifier, filename)
+	ChangeFileName(t, filename)
+	ScaleSprite(t, modifier)
 	t.width = width
 	t.height = height
-	t.scale = 1 / modifier
 end
 
 function ChangeFileName(t, filename)
 	if filename == nil then
-		t.filename = string.gsub(t.filename, "__base__", "__WaiTex__")
+		t.filename = string.gsub(t.filename, "__base__", MOD_NAME)
 	else
 		t.filename = filename
 	end
@@ -34,8 +34,12 @@ end
 
 function ScaleSprite(t, modifier)
 	modifier = modifier or 2
-	t.width = math.floor(t.width * modifier)
-	t.height = math.floor(t.height * modifier)
+	if t.width ~= nil then
+		t.width = math.floor(t.width * modifier)
+	end
+	if t.height ~= nil then
+		t.height = math.floor(t.height * modifier)
+	end
 	t.scale = (t.scale or 1) / modifier
 	
 	if t.y ~= nil then
@@ -60,18 +64,8 @@ function ChangeAnimationSize(t, width_in_frames, height_in_frames)
 	end
 end
 
-
-
-function AllowChange(name)
-	if TexturePermissions[name] == nil then
-		return true
-	end
-	local tex = TexturePermissions[name]
-	return (tex.enabled and (AvailableGB >= tex.requiredGB))
-end
-
 function IsBase(filepath)
-	return string.find(filepath, "__base__")
+	return string.find(filepath, "__base__") or string.find(filepath, "__core__")
 end
 
 function AddStripes(t, width, height, filenames, yValue)
@@ -168,14 +162,38 @@ function ChangeSettings(t, settingsChanges)
 end
 
 function ChangeIcon(t)
-	t.icon = string.gsub(t.icon, "__base__", "__WaiTex__")
+	t.icon = string.gsub(t.icon, "__base__", MOD_NAME)
 end
 
 --i should really document how to function works as i
 --will probably use it a lot in the future, but i am
 --am too lazy to do it and the code is totally self explanatory!
 function TextureToSpritesConverter(t, pathTemplate)
-	if t.stripes ~= nil and t.frame_count ~= nil and t.direction_count ~= nil then
+	if t.filenames ~= nil and t.line_length ~= nil and t.lines_per_file ~= nil and t.direction_count ~= nil then
+		local paths = {}
+		local spritesLeft = t.direction_count
+		for i = 1, #t.filenames do
+			local filesPath = string.gsub(pathTemplate, "&", tostring(i))
+			local spritesInFile = math.min(t.line_length * t.lines_per_file, spritesLeft)
+			paths[#paths + 1] = CreateFilePaths(filesPath, ".png", spritesInFile)
+			spritesLeft  = spritesLeft - spritesInFile
+		end
+		local allPaths = {}
+		local index = 1
+		for i = 1, #paths do
+			for x = 1, #paths[i] do
+				allPaths[index] = paths[i][x]
+				--print(paths[i][x])
+				index = index + 1
+			end
+		end
+		
+		ScaleSprite(t)
+		
+		t.filenames = allPaths
+		t.line_length = 1
+        t.lines_per_file = 1
+	elseif t.stripes ~= nil and t.frame_count ~= nil and t.direction_count ~= nil then
 		if PatternMatchColumnAdditions(t) then
 			local numberOfStripMerges = GetStripeMerges(t)
 			local stripeSpritePaths = GetStripeSpritePaths(t, pathTemplate)
@@ -218,7 +236,8 @@ function TextureToSpritesConverter(t, pathTemplate)
 		local width = (t.line_length or t.frame_count)
 		local height = (t.direction_count or 1) * (t.frame_count / (t.line_length or t.frame_count))
 		local startSpriteNumber = width * (((t.y or 0) / t.height)) + 1
-		local numberOfSprites = width * height
+		local numberOfSprites = t.frame_count * (t.direction_count or 1)
+		
 		AddStripes(t, 1, 1, CreateFilePaths(pathTemplate, ".png", numberOfSprites, startSpriteNumber))
 	else
 		print("couldn't convert stripe texture to sprites")
@@ -229,17 +248,17 @@ function PatternMatchColumnAdditions(t)
 	local frameHeight = t.stripes[1].height_in_frames
 	for i = 2, #t.stripes do
 		if frameHeight ~= t.stripes[i].height_in_frames then
-			print("false")
+			--print("false")
 			return false
 		end
 	end
-	print("true")
+	--print("true")
 	return true
 end
 
 function GetStripeMerges(t)
 	local sum = 0
-	for i = 1,#t.stripes do
+	for i = 1, #t.stripes do
 		sum = sum + (t.line_length or t.stripes[i].width_in_frames)
 		if sum == t.frame_count then
 			return #t.stripes / i

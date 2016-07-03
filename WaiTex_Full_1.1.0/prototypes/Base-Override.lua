@@ -24,43 +24,36 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/assembling-machine-3/pipe-west.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[basic-beacon]]--
-	["__base__/graphics/entity/basic-beacon/basic-beacon-base.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/basic-beacon/basic-beacon-antenna.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[beacon]]--
+	["__base__/graphics/entity/beacon/beacon-base.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/beacon/beacon-antenna.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[basic-inserter]]--
-	["__base__/graphics/entity/basic-inserter/basic-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/basic-inserter/basic-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/basic-inserter/basic-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/basic-inserter/basic-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[electric-mining-drill]]--
+	["__base__/graphics/entity/electric-mining-drill/north.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/electric-mining-drill/east.png"] = function(t)  ManualOverrideSprite(t[#t], 256, 200, 2) end,
+	["__base__/graphics/entity/electric-mining-drill/south.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/electric-mining-drill/west.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[basic-mining-drill]]--
-	["__base__/graphics/entity/basic-mining-drill/north.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/basic-mining-drill/east.png"] = function(t)  ManualOverrideSprite(t[#t], 256, 200, 2) end,
-	["__base__/graphics/entity/basic-mining-drill/south.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/basic-mining-drill/west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[splitter]]--
+	["__base__/graphics/entity/splitter/splitter-north.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
+	["__base__/graphics/entity/splitter/splitter-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/splitter/splitter-south.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
+	["__base__/graphics/entity/splitter/splitter-west.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[basic-splitter]]--
-	["__base__/graphics/entity/basic-splitter/basic-splitter-north.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
-	["__base__/graphics/entity/basic-splitter/basic-splitter-east.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/basic-splitter/basic-splitter-south.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
-	["__base__/graphics/entity/basic-splitter/basic-splitter-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[transport-belt]]--
+	["__base__/graphics/entity/transport-belt/transport-belt.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[basic-transport-belt]]--
-	["__base__/graphics/entity/basic-transport-belt/basic-transport-belt.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[underground-belt]]--
+	["__base__/graphics/entity/underground-belt/underground-belt-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[basic-transport-belt-to-ground]]--
-	["__base__/graphics/entity/basic-transport-belt-to-ground/basic-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
-	--[[basic-accumulator]]--
-	["__base__/graphics/entity/basic-accumulator/basic-accumulator.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/basic-accumulator/basic-accumulator-charge-animation.png"] = function(t)
+	--[[accumulator]]--
+	["__base__/graphics/entity/accumulator/accumulator.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/accumulator/accumulator-charge-animation.png"] = function(t)
 		t[#t].layers = 
 		{
 			{
@@ -74,7 +67,7 @@ local ChangeTextureConfiguration =
 					result = {}
 					stripe = 
 					{
-						filename = "__WaiTex__/graphics/entity/basic-accumulator/basic-accumulator.png",
+						filename = MOD_NAME.."/graphics/entity/accumulator/accumulator.png",
 						width_in_frames = 1,
 						height_in_frames = 1
 					}
@@ -85,7 +78,7 @@ local ChangeTextureConfiguration =
 				end)()
 			},
 			{
-				filename = "__WaiTex__/graphics/entity/basic-accumulator/basic-accumulator-charge-sparks.png",
+				filename = MOD_NAME.."/graphics/entity/accumulator/accumulator-charge-sparks.png",
 				width = 138 * 2,
 				height = 135  *2,
 				line_length = 6,
@@ -96,7 +89,7 @@ local ChangeTextureConfiguration =
 			}
 		}
 	end,
-	["__base__/graphics/entity/basic-accumulator/basic-accumulator-discharge-animation.png"] = function(t)
+	["__base__/graphics/entity/accumulator/accumulator-discharge-animation.png"] = function(t)
 		t[#t].layers = 
 		{
 			{
@@ -110,7 +103,7 @@ local ChangeTextureConfiguration =
 					result = {}
 					stripe = 
 					{
-						filename = "__WaiTex__/graphics/entity/basic-accumulator/basic-accumulator.png",
+						filename = MOD_NAME.."/graphics/entity/accumulator/accumulator.png",
 						width_in_frames = 1,
 						height_in_frames = 1
 					}
@@ -121,7 +114,7 @@ local ChangeTextureConfiguration =
 				end)()
 			},
 			{
-				filename = "__WaiTex__/graphics/entity/basic-accumulator/basic-accumulator-discharge-sparks.png",
+				filename = MOD_NAME.."/graphics/entity/accumulator/accumulator-discharge-sparks.png",
 				width = 147 * 2,
 				height = 128 * 2,
 				line_length = 6,
@@ -204,25 +197,25 @@ local ChangeTextureConfiguration =
 	--[[big-biter]]--
 	["__base__/graphics/entity/biter/biter-run-1.png"] = function(t) 
 		if #t > 2 then
-			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-1/biter-run-1-", ".png", 128)
-			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-2/biter-run-2-", ".png", 128)
+			local part1 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-run-1/biter-run-1-", ".png", 128)
+			local part2 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-run-2/biter-run-2-", ".png", 128)
 			local combined = StripMerge({part1, part2}, 16, {8, 8})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
 	end,
 	["__base__/graphics/entity/biter/biter-run-mask1.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-mask1/biter-run-mask1-", ".png", 256))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-run-mask1/biter-run-mask1-", ".png", 256))
 	end,
 	["__base__/graphics/entity/biter/biter-run-mask2.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-run-mask2/biter-run-mask2-", ".png", 256))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-run-mask2/biter-run-mask2-", ".png", 256))
 	end,
 	["__base__/graphics/entity/biter/biter-attack-1.png"] = function(t) 
 		if #t > 2 then
-			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-1/biter-attack-1-", ".png", 48)
-			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-2/biter-attack-2-", ".png", 40)
-			local part3 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-3/biter-attack-3-", ".png", 48)
-			local part4 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-4/biter-attack-4-", ".png", 40)
+			local part1 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-attack-1/biter-attack-1-", ".png", 48)
+			local part2 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-attack-2/biter-attack-2-", ".png", 40)
+			local part3 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-attack-3/biter-attack-3-", ".png", 48)
+			local part4 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-attack-4/biter-attack-4-", ".png", 40)
 			local combined1 = StripMerge({part1, part2}, 8, {6, 5})
 			local combined2 = StripMerge({part3, part4}, 8, {6, 5})
 			local combined  = MergeTables({combined1, combined2})
@@ -231,17 +224,17 @@ local ChangeTextureConfiguration =
 		end
 	end,
 	["__base__/graphics/entity/biter/biter-attack-mask1.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-mask1/biter-attack-mask1-", ".png", 176))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-attack-mask1/biter-attack-mask1-", ".png", 176))
 	end,
 	["__base__/graphics/entity/biter/biter-attack-mask2.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-attack-mask2/biter-attack-mask2-", ".png", 176))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-attack-mask2/biter-attack-mask2-", ".png", 176))
 	end,
 	["__base__/graphics/entity/biter/biter-die-1.png"] = function(t) 
 		if #t > 2 then
-			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-1/biter-die-1-", ".png", 72)
-			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-2/biter-die-2-", ".png", 64)
-			local part3 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-3/biter-die-3-", ".png", 72)
-			local part4 = CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-4/biter-die-4-", ".png", 64)
+			local part1 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-die-1/biter-die-1-", ".png", 72)
+			local part2 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-die-2/biter-die-2-", ".png", 64)
+			local part3 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-die-3/biter-die-3-", ".png", 72)
+			local part4 = CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-die-4/biter-die-4-", ".png", 64)
 			local combined1 = StripMerge({part1, part2}, 8, {9, 8})
 			local combined2 = StripMerge({part3, part4}, 8, {9, 8})
 			local combined  = MergeTables({combined1, combined2})
@@ -250,10 +243,10 @@ local ChangeTextureConfiguration =
 		end
 	end,
 	["__base__/graphics/entity/biter/biter-die-mask1.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-mask1/biter-die-mask1-", ".png", 272))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-die-mask1/biter-die-mask1-", ".png", 272))
 	end,
 	["__base__/graphics/entity/biter/biter-die-mask2.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/biter/biter-die-mask2/biter-die-mask2-", ".png", 272))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/biter/biter-die-mask2/biter-die-mask2-", ".png", 272))
 	end,
 	
 	
@@ -266,13 +259,6 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/boiler/boiler-right-up.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/boiler/boiler-t-down.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/boiler/boiler-t-up.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
-	--[[burner-inserter]]--
-	["__base__/graphics/entity/burner-inserter/burner-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/burner-inserter/burner-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/burner-inserter/burner-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[burner-mining-drill]]--
@@ -291,34 +277,29 @@ local ChangeTextureConfiguration =
 			ChangeAnimation(t[#t - 2].stripes[3], 4, 10)
 		end
 	end,
-	--["__base__/graphics/entity/car/car-1.png"] = function(t)
-	--	if #t > 2 then
-	--		print("sdfsfdsf")
-	--		TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/car/car-&/car-&-")
-	--	end
-	--end,
-	--["__base__/graphics/entity/car/car-mask-1.png"] = function(t)
-	--	if #t > 2 then
-	--		TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/car/car-mask-&/car-mask-&-")
-	--		t[#t] = nil
-	--		t[#t] = nil
-	--		--serpent.block(t[#t - 2])
-	--		--t[#t - 2] = nil
-	--		--t[#t - 3] = nil
-	--	end
-	--end,
 	["__base__/graphics/entity/car/car-turret.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[cargo-wagon]]--
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-spritesheet-1.png"] = function(t)
-		if #t > 1 and t[#t - 1].filenames ~= nil then
-			ScaleSprite(t[#t - 1])
-			t[#t - 1].line_length = 2
-			t[#t - 1].lines_per_file = 4
-			t[#t - 1].filenames = CreateFilePaths("__WaiTex__/graphics/entity/cargo-wagon/cargo-wagon-spritesheet-", ".png", 16)
-		end
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-1.png"] = function(t)
+		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/cargo-wagon/cargo-wagon/cargo-wagon-&/cargo-wagon-&-", ".png")
 	end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-mask-1.png"] = function(t)
+		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/cargo-wagon/cargo-wagon-mask/cargo-wagon-mask-&/cargo-wagon-mask-&-", ".png")
+	end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-shadow-1.png"] = function(t)
+		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/cargo-wagon/cargo-wagon-shadow/cargo-wagon-shadow-&/cargo-wagon-shadow-&-", ".png")
+	end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-end.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-side.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-side-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-top.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-top-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-end.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-side.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-side-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-top.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-top-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[chemical-plant]]--
@@ -344,11 +325,22 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[combinator]]--
-	["__base__/graphics/entity/combinator/aritmetic.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/combinator/aritmetic-led.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/combinator/decider.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/combinator/decider-led.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/combinator/constanter.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-entities.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[arithmetic lights]]--
+	["__base__/graphics/entity/combinator/combinator-led-arithmetic-north.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-arithmetic-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-arithmetic-south.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-arithmetic-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[constant lights]]--
+	["__base__/graphics/entity/combinator/combinator-led-constant-north.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-constant-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-constant-south.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-constant-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[decider lights]]--
+	["__base__/graphics/entity/combinator/combinator-led-decider-north.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-decider-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-decider-south.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/combinator/combinator-led-decider-west.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[crude-oil]]--
@@ -361,10 +353,11 @@ local ChangeTextureConfiguration =
 	
 	--[[destroyer]]--
 	["__base__/graphics/entity/destroyer-robot/destroyer-robot.png"] = function(t)
-		AddStripes(t[#t], 16, 2, CreateFilePaths("__WaiTex__/graphics/entity/destroyer-robot/destroyer-robot-", ".png", 2))
+		AddStripes(t[#t], 16, 2, CreateFilePaths(MOD_NAME.."/graphics/entity/destroyer-robot/destroyer-robot-", ".png", 2))
 		t[#t].line_length = 16
 		t[#t].y = nil
 	end,
+	["__base__/graphics/entity/destroyer-robot/destroyer-robot-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[distractor]]--
@@ -422,14 +415,17 @@ local ChangeTextureConfiguration =
 	
 	--[[diesel-locomotive]]--
 	["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-01.png"] = function(t)
-		if #t > 1 and t[#t - 1].filenames ~= nil then
-			ScaleSprite(t[#t - 1])
-			t[#t - 1].line_length = 2
-			t[#t - 1].lines_per_file = 4
-			t[#t - 1].filenames = CreateFilePaths("__WaiTex__/graphics/entity/diesel-locomotive/diesel-locomotive-", ".png", 32)
-		end
+		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive/diesel-locomotive-0&/diesel-locomotive-0&-", ".png")
 	end,
-	
+	["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-01.png"] = function(t)
+		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive-mask/diesel-locomotive-mask-0&/diesel-locomotive-mask-0&-", ".png")
+	end,
+	["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-01.png"] = function(t)
+		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive-shadow/diesel-locomotive-shadow-0&/diesel-locomotive-shadow-0&-", ".png")
+	end,
+	["__base__/graphics/entity/diesel-locomotive/train-wheels-01.png"] = function(t)
+		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/train-wheels/train-wheels-0&/train-wheels-0&-", ".png")
+	end,
 	
 	--[[electric-furnace]]--
 	["__base__/graphics/entity/electric-furnace/electric-furnace-base.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -449,8 +445,8 @@ local ChangeTextureConfiguration =
 			local y = t[#t].y or 0
 			AddStripes(t[#t], 16, 1, 
 			{
-				"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png",
-				"__WaiTex__/graphics/entity/express-transport-belt/express-transport-belt.png"
+				MOD_NAME.."/graphics/entity/express-transport-belt/express-transport-belt.png",
+				MOD_NAME.."/graphics/entity/express-transport-belt/express-transport-belt.png"
 			})
 			t[#t].stripes[1].y = y * 2
 			t[#t].stripes[2].y = (y * 2) + t[#t].height
@@ -493,13 +489,6 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/flame-thrower-explosion/flame-thrower-explosion.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[fast-inserter]]--
-	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/fast-inserter/fast-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
 	--[[fast-splitter]]--
 	["__base__/graphics/entity/fast-splitter/fast-splitter-north.png"] = function(t)  OverrideAnimation(t[#t], 8) end,
 	["__base__/graphics/entity/fast-splitter/fast-splitter-east.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -513,8 +502,8 @@ local ChangeTextureConfiguration =
 			local y = t[#t].y or 0
 			AddStripes(t[#t], 16, 1, 
 			{
-				"__WaiTex__/graphics/entity/fast-transport-belt/fast-transport-belt.png",
-				"__WaiTex__/graphics/entity/fast-transport-belt/fast-transport-belt.png"
+				MOD_NAME.."/graphics/entity/fast-transport-belt/fast-transport-belt.png",
+				MOD_NAME.."/graphics/entity/fast-transport-belt/fast-transport-belt.png"
 			})
 			t[#t].stripes[1].y = y * 2
 			t[#t].stripes[2].y = (y * 2) + t[#t].height
@@ -524,6 +513,73 @@ local ChangeTextureConfiguration =
 			t[#t].line_length = 16
 		end
 	end,
+	
+	
+	--[[fire-flame]]--
+	["__base__/graphics/entity/fire-flame/fire-flame-1.png"] = function(t)  OverrideSprite(t[#t]) print("stuff") end,
+	["__base__/graphics/entity/fire-flame/fire-flame-2.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-3.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-4.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-5.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-6.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-7.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-8.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-9.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-10.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-11.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-12.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-flame-13.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/tree-fire-flame-01-a.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/tree-fire-flame-01-b.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/tree-fire-flame-01-c.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/tree-fire-flame-03-a.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/tree-fire-flame-03-b.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/tree-fire-flame-03-c.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/burnt-patch.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-smoke-source-1.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fire-flame/fire-smoke-source-2.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[fire-smoke]]--
+	["__base__/graphics/entity/fire-smoke/fire-smoke.png"] = function(t)
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/fire-smoke/fire-smoke/fire-smoke-")
+	end,
+	["__base__/graphics/entity/fire-smoke/fire-smoke-glow.png"] = function(t)
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/fire-smoke/fire-smoke-glow/fire-smoke-glow-")
+	end,
+	
+	
+	--[[flamethrower-fire-stream]]--
+	["__base__/graphics/entity/flamethrower-fire-stream/flamethrower-fire-stream-spine.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-fire-stream/flamethrower-explosion.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[flamethrower-turret]]--
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-east-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-east-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-north.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-north-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-north-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-south.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-south-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-south-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-west-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-base-west-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-gun-active.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-gun-extension.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-gun-extension-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-gun-extension-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-gun-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-gun-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-led-indicator-east.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-led-indicator-north.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-led-indicator-south.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-led-indicator-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/flamethrower-turret/flamethrower-turret-muzzle-fire.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
 	
 	--[[fast-transport-belt-to-ground]]--
 	["__base__/graphics/entity/fast-transport-belt-to-ground/fast-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -568,12 +624,45 @@ local ChangeTextureConfiguration =
 		["__base__/graphics/entity/gun-turret/gun-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/gun-turret/gun-turret-gun-1.png"] = function(t)
 		if #t > 2 then
-			AddStripes(t[#t - 2], t[#t - 2].frame_count, 16, CreateFilePaths("__WaiTex__/graphics/entity/gun-turret/gun-turret-gun-", ".png", 4))
+			AddStripes(t[#t - 2], t[#t - 2].frame_count, 16, CreateFilePaths(MOD_NAME.."/graphics/entity/gun-turret/gun-turret-gun-", ".png", 4))
 		end
 	end,
 	["__base__/graphics/entity/gun-turret/gun-turret-gun-mask.png"] = function(t)
-		AddStripes(t[#t], t[#t].frame_count, 32, CreateFilePaths("__WaiTex__/graphics/entity/gun-turret/gun-turret-gun-mask-", ".png", 2))
+		AddStripes(t[#t], t[#t].frame_count, 32, CreateFilePaths(MOD_NAME.."/graphics/entity/gun-turret/gun-turret-gun-mask-", ".png", 2))
 	end,
+	
+	
+	--[[inserters]]--
+	--[[inserter]]--
+	["__base__/graphics/entity/inserter/inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/inserter/inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/inserter/inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/inserter/inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[burner-inserter]]--
+	["__base__/graphics/entity/burner-inserter/burner-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/burner-inserter/burner-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/burner-inserter/burner-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[fast-inserter]]--
+	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/fast-inserter/fast-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/fast-inserter/fast-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[filter-inserter]]--
+	["__base__/graphics/entity/filter-inserter/filter-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/filter-inserter/filter-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/filter-inserter/filter-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/filter-inserter/filter-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[stack-inserter]]--
+	["__base__/graphics/entity/stack-inserter/stack-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/stack-inserter/stack-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/stack-inserter/stack-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/stack-inserter/stack-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[stack-filter-inserter]]--
+	["__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
+	["__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[iron-chest]]--
@@ -704,6 +793,13 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/pipe-to-ground/pipe-to-ground-right.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
+	--[[power-switch]]--
+	["__base__/graphics/entity/power-switch/power-switch.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/power-switch/power-switch-electricity-start.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/power-switch/power-switch-electricity-loop.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/power-switch/power-switch-led.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
 	--[[pumpjack]]--
 	["__base__/graphics/entity/pumpjack/pumpjack-base.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/pumpjack/pumpjack-animation.png"] = function(t) 
@@ -719,7 +815,7 @@ local ChangeTextureConfiguration =
 		t[#t].lines_per_file = 1
 		t[#t].line_length = 4
 		t[#t].filename = nil
-		t[#t].filenames = CreateFilePaths("__WaiTex__/graphics/entity/radar/radar", ".png", 16)
+		t[#t].filenames = CreateFilePaths(MOD_NAME.."/graphics/entity/radar/radar", ".png", 16)
 	end,
 	
 	
@@ -739,114 +835,114 @@ local ChangeTextureConfiguration =
 	
 	--[[player]]--
 	["__base__/graphics/entity/player/player-basic-idle.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-idle/player-basic-idle-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-idle/player-basic-idle-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-idle-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-idle-color/player-basic-idle-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-idle-color/player-basic-idle-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-idle-gun.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-idle-gun/player-basic-idle-gun-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-idle-gun/player-basic-idle-gun-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-idle-gun-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-idle-gun-color/player-basic-idle-gun-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-idle-gun-color/player-basic-idle-gun-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-mine.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-mine/player-basic-mine-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-mine/player-basic-mine-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-mine-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-mine-color/player-basic-mine-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-mine-color/player-basic-mine-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-mine-tool.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-mine-tool/player-basic-mine-tool-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-mine-tool-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-mine-tool-color/player-basic-mine-tool-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-mine-tool-color/player-basic-mine-tool-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-run-gun.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-run-gun/player-basic-run-gun-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-run-gun/player-basic-run-gun-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-run-gun-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-run-gun-color/player-basic-run-gun-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-run-gun-color/player-basic-run-gun-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-run.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-run/player-basic-run-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-run/player-basic-run-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-basic-run-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-basic-run-color/player-basic-run-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-basic-run-color/player-basic-run-color-", ".png")
 	end,
 	
 	["__base__/graphics/entity/player/player-armor1-idle.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-idle/player-armor1-idle-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-idle/player-armor1-idle-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-idle-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-idle-color/player-armor1-idle-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-idle-color/player-armor1-idle-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-idle-gun.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-idle-gun/player-armor1-idle-gun-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-idle-gun/player-armor1-idle-gun-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-idle-gun-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-idle-gun-color/player-armor1-idle-gun-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-idle-gun-color/player-armor1-idle-gun-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-mine.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-mine/player-armor1-mine-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-mine/player-armor1-mine-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-mine-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-mine-color/player-armor1-mine-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-mine-color/player-armor1-mine-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-mine-tool.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-mine-tool/player-armor1-mine-tool-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-mine-tool/player-armor1-mine-tool-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-mine-tool-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-mine-tool-color/player-armor1-mine-tool-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-mine-tool-color/player-armor1-mine-tool-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-run-gun.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-run-gun/player-armor1-run-gun-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-run-gun/player-armor1-run-gun-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-run-gun-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-run-gun-color/player-armor1-run-gun-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-run-gun-color/player-armor1-run-gun-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-run.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-run/player-armor1-run-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-run/player-armor1-run-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor1-run-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor1-run-color/player-armor1-run-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor1-run-color/player-armor1-run-color-", ".png")
 	end,
 	
 	["__base__/graphics/entity/player/player-armor2-idle.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-idle/player-armor2-idle-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-idle/player-armor2-idle-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-idle-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-idle-color/player-armor2-idle-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-idle-color/player-armor2-idle-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-idle-gun.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-idle-gun/player-armor2-idle-gun-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-idle-gun/player-armor2-idle-gun-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-idle-gun-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-idle-gun-color/player-armor2-idle-gun-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-idle-gun-color/player-armor2-idle-gun-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-mine.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-mine/player-armor2-mine-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-mine/player-armor2-mine-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-mine-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-mine-color/player-armor2-mine-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-mine-color/player-armor2-mine-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-mine-tool.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-mine-tool/player-armor2-mine-tool-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-mine-tool/player-armor2-mine-tool-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-mine-tool-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-mine-tool-color/player-armor2-mine-tool-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-mine-tool-color/player-armor2-mine-tool-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-run-gun.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-run-gun/player-armor2-run-gun-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-run-gun/player-armor2-run-gun-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-run-gun-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-run-gun-color/player-armor2-run-gun-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-run-gun-color/player-armor2-run-gun-color-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-run.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-run/player-armor2-run-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-run/player-armor2-run-", ".png")
 	end,
 	["__base__/graphics/entity/player/player-armor2-run-color.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/player/player-armor2-run-color/player-armor2-run-color-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/player/player-armor2-run-color/player-armor2-run-color-", ".png")
 	end,
 	
 	
@@ -931,13 +1027,6 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/ship-wreck/small-ship-wreck-grass-3.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[smart-inserter]]--
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-base.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-closed.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-hand-open.png"] = function(t)  OverrideSprite(t[#t], 1) end,
-	["__base__/graphics/entity/smart-inserter/smart-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
 	--[[solar-panel]]--
 	["__base__/graphics/entity/solar-panel/solar-panel.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
@@ -951,21 +1040,35 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/sparks/sparks-06.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
+	--[[smoke]]--
+	["__base__/graphics/entity/smoke-construction/smoke-01.png"] = function(t)  
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/smoke/smoke/smoke-") 
+	end,
+	
+	
+	--[[smoke-construction]]--
+	["__base__/graphics/entity/smoke-construction/smoke-01.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[smoke-fast]]--
+	["__base__/graphics/entity/smoke-fast/smoke-fast.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
 	--[[biter-spawner and spitter-spawner]]--
 	["__base__/graphics/entity/spawner/spawner-idle.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/spawner/spawner-idle/spawner-idle-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/spawner/spawner-idle/spawner-idle-", ".png")
 	end,
 	["__base__/graphics/entity/spawner/spawner-idle-mask.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/spawner/spawner-idle-mask/spawner-idle-mask-", ".png")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/spawner/spawner-idle-mask/spawner-idle-mask-", ".png")
 	end,
 	["__base__/graphics/entity/spawner/spawner-die-01.png"] = function(t)
 		if #t > 2 then
-			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spawner/spawner-die-0&/spawner-die-0&-")
+			TextureToSpritesConverter(t[#t - 2], MOD_NAME.."/graphics/entity/spawner/spawner-die-0&/spawner-die-0&-")
 		end
 	end,
 	["__base__/graphics/entity/spawner/spawner-die-mask-01.png"] = function(t)
 		if #t > 2 then
-			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spawner/spawner-die-mask-0&/spawner-die-mask-0&-")
+			TextureToSpritesConverter(t[#t - 2], MOD_NAME.."/graphics/entity/spawner/spawner-die-mask-0&/spawner-die-mask-0&-")
 		end
 	end,
 	
@@ -979,30 +1082,30 @@ local ChangeTextureConfiguration =
 	--[[spitter]]--
 	["__base__/graphics/entity/spitter/spitter-attack-1.png"] = function(t)
 		if #t > 2 then
-			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-attack-&/spitter-attack-&-")
+			TextureToSpritesConverter(t[#t - 2], MOD_NAME.."/graphics/entity/spitter/spitter-attack-&/spitter-attack-&-")
 		end
 	end,
 	["__base__/graphics/entity/spitter/spitter-attack-mask-1.png"] = function(t)
 		if #t > 2 then
-			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-attack-mask-&/spitter-attack-mask-&-")
+			TextureToSpritesConverter(t[#t - 2], MOD_NAME.."/graphics/entity/spitter/spitter-attack-mask-&/spitter-attack-mask-&-")
 		end
 	end,
 	["__base__/graphics/entity/spitter/spitter-run-1.png"] = function(t)
 		if #t > 2 then
-			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-run-&/spitter-run-&-")
+			TextureToSpritesConverter(t[#t - 2], MOD_NAME.."/graphics/entity/spitter/spitter-run-&/spitter-run-&-")
 		end
 	end,
 	["__base__/graphics/entity/spitter/spitter-run-mask.png"] = function(t)
-		TextureToSpritesConverter(t[#t], "__WaiTex__/graphics/entity/spitter/spitter-run-mask/spitter-run-mask-")
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/spitter/spitter-run-mask/spitter-run-mask-")
 	end,
 	["__base__/graphics/entity/spitter/spitter-die-1.png"] = function(t)
 		if #t > 2 then
-			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-die-&/spitter-die-&-")
+			TextureToSpritesConverter(t[#t - 2], MOD_NAME.."/graphics/entity/spitter/spitter-die-&/spitter-die-&-")
 		end
 	end,
 	["__base__/graphics/entity/spitter/spitter-die-mask-1.png"] = function(t)
 		if #t > 2 then
-			TextureToSpritesConverter(t[#t - 2], "__WaiTex__/graphics/entity/spitter/spitter-die-mask-&/spitter-die-mask-&-")
+			TextureToSpritesConverter(t[#t - 2], MOD_NAME.."/graphics/entity/spitter/spitter-die-mask-&/spitter-die-mask-&-")
 		end
 	end,
 	
@@ -1015,11 +1118,11 @@ local ChangeTextureConfiguration =
 	
 	--[[steam-engine]]--
 	["__base__/graphics/entity/steam-engine/steam-engine-horizontal.png"] = function(t)
-		AddStripes(t[#t], 4, 2, CreateFilePaths("__WaiTex__/graphics/entity/steam-engine/steam-engine-horizontal-", ".png", 4))
+		AddStripes(t[#t], 4, 2, CreateFilePaths(MOD_NAME.."/graphics/entity/steam-engine/steam-engine-horizontal-", ".png", 4))
 		t[#t].line_length = nil
 	end,
 	["__base__/graphics/entity/steam-engine/steam-engine-vertical.png"] = function(t)
-		AddStripes(t[#t], 4, 4, CreateFilePaths("__WaiTex__/graphics/entity/steam-engine/steam-engine-vertical-", ".png", 2))
+		AddStripes(t[#t], 4, 4, CreateFilePaths(MOD_NAME.."/graphics/entity/steam-engine/steam-engine-vertical-", ".png", 2))
 		t[#t].line_length = nil
 	end,
 	
@@ -1029,8 +1132,11 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[steel-furnace]]--
-	["__base__/graphics/entity/steel-furnace/steel-furnace-working.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/steel-furnace/steel-furnace-idle.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/steel-furnace/steel-furnace.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/steel-furnace/steel-furnace-fire.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/steel-furnace/steel-furnace-glow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/steel-furnace/steel-furnace-working-lighting.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/steel-furnace/steel-furnace-idle.png"] = function(t)  OverrideSprite(t[#t]) end,
 	--["__base__/graphics/entity/steel-furnace/steel-furnace-fire.png"] = function(t)  OverrideSprite(t[#t], 1.96) end,
 	
 	
@@ -1123,10 +1229,29 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[train-stop]]--
-	["__base__/graphics/entity/train-stop/train-stop-north.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/train-stop/train-stop-east.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/train-stop/train-stop-south.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/train-stop/train-stop-west.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-bottom.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-ground.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-shadow.png"] = function(t)  
+		TextureToSpritesConverter(t[#t], MOD_NAME.."/graphics/entity/train-stop/train-stop-shadow/train-stop-shadow-")
+	end,
+	["__base__/graphics/entity/train-stop/train-stop-top.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-top-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[train-stop lights north]]--
+	["__base__/graphics/entity/train-stop/train-stop-north-light-1.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-north-light-2.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-north-light-2-glow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[train-stop lights south]]--
+	["__base__/graphics/entity/train-stop/train-stop-south-light-1.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-south-light-2.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-south-light-2-glow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[train-stop lights east]]--
+	["__base__/graphics/entity/train-stop/train-stop-east-light-1.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-east-light-2.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-east-light-2-glow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[train-stop lights west]]--
+	["__base__/graphics/entity/train-stop/train-stop-west-light-1.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-west-light-2.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/train-stop/train-stop-west-light-2-glow.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[water-splash]]--
@@ -1142,26 +1267,26 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/worm/worm-folded-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/worm/worm-preparing-01.png"] = function(t)
 		if #t > 2 then
-			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-preparing-01/worm-preparing-01-", ".png", 14)
-			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-preparing-02/worm-preparing-02-", ".png", 12)
+			local part1 = CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-preparing-01/worm-preparing-01-", ".png", 14)
+			local part2 = CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-preparing-02/worm-preparing-02-", ".png", 12)
 			local combined = MergeTables({part1, part2})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
 	end,
 	["__base__/graphics/entity/worm/worm-preparing-mask.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-preparing-mask/worm-preparing-mask-", ".png", 26))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-preparing-mask/worm-preparing-mask-", ".png", 26))
 	end,
 	["__base__/graphics/entity/worm/worm-prepared.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-prepared/worm-prepared-", ".png", 10))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-prepared/worm-prepared-", ".png", 10))
 	end,
 	["__base__/graphics/entity/worm/worm-prepared-mask.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-prepared-mask/worm-prepared-mask-", ".png", 10))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-prepared-mask/worm-prepared-mask-", ".png", 10))
 	end,
 	["__base__/graphics/entity/worm/worm-attack-01.png"] = function(t)
 		if #t > 2 then
-			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-01/worm-attack-01-", ".png", 64)
-			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-02/worm-attack-02-", ".png", 64)
+			local part1 = CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-attack-01/worm-attack-01-", ".png", 64)
+			local part2 = CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-attack-02/worm-attack-02-", ".png", 64)
 			local combined = MergeTables({part1, part2})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
@@ -1169,18 +1294,31 @@ local ChangeTextureConfiguration =
 	end,
 	["__base__/graphics/entity/worm/worm-attack-mask-01.png"] = function(t)
 		if #t > 2 then
-			local part1 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-mask-01/worm-attack-mask-01-", ".png", 64)
-			local part2 = CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-attack-mask-02/worm-attack-mask-02-", ".png", 64)
+			local part1 = CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-attack-mask-01/worm-attack-mask-01-", ".png", 64)
+			local part2 = CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-attack-mask-02/worm-attack-mask-02-", ".png", 64)
 			local combined = MergeTables({part1, part2})
 			
 			AddStripes(t[#t - 2], 1, 1, combined)
 		end
 	end,
 	["__base__/graphics/entity/worm/worm-die.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-die/worm-die-", ".png", 24))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-die/worm-die-", ".png", 24))
 	end,
 	["__base__/graphics/entity/worm/worm-die-mask.png"] = function(t)
-		AddStripes(t[#t], 1, 1, CreateFilePaths("__WaiTex__/graphics/entity/worm/worm-die-mask/worm-die-mask-", ".png", 24))
+		AddStripes(t[#t], 1, 1, CreateFilePaths(MOD_NAME.."/graphics/entity/worm/worm-die-mask/worm-die-mask-", ".png", 24))
+	end,
+	
+	["__core__/graphics/cursor-boxes.png"] = function(t)
+		ManualOverrideSprite(t, 128, 128, 4, MOD_NAME.."/graphics/style/cursor-boxes.png")
+		--print(t.filename)
+		--print(serpent.block(t))
+		--print("changed gui")
+	end,
+	
+	["__core__/graphics/cursor-boxes-32x32.png"] = function(t)
+		ManualOverrideSprite(t, 128, 128, 4, MOD_NAME.."/graphics/style/cursor-boxes-32x32.png")
+		--print(serpent.block(t))
+		--print("changed gui")
 	end,
 }
 
@@ -1238,38 +1376,38 @@ for k, v in pairs(data.raw.tile) do
 		for k1, v1 in pairs(v.variants.main) do
 			if v1.picture then
 				print(v1.picture)
-				v1.picture = string.gsub(v1.picture, "__base__", "__WaiTex__")
+				v1.picture = string.gsub(v1.picture, "__base__", MOD_NAME)
 			end
 		end
 	end
 	if v.inner_corner then
 		if v.inner_corner.picture then
 			print(v.inner_corner.picture)
-			v.inner_corner.picture = string.gsub(v.inner_corner.picture, "__base__", "__WaiTex__")
+			v.inner_corner.picture = string.gsub(v.inner_corner.picture, "__base__", MOD_NAME)
 		end
 	end
 	if v.outer_corner then
 		if v.outer_corner.picture then
 			print(v.outer_corner.picture)
-			v.outer_corner.picture = string.gsub(v.outer_corner.picture, "__base__", "__WaiTex__")
+			v.outer_corner.picture = string.gsub(v.outer_corner.picture, "__base__", MOD_NAME)
 		end
 	end
 	if v.side then
 		if v.side.picture then
 			print(v.side.picture)
-			v.side.picture = string.gsub(v.side.picture, "__base__", "__WaiTex__")
+			v.side.picture = string.gsub(v.side.picture, "__base__", MOD_NAME)
 		end
 	end
 	if  v.u_transition then
 		if v.u_transition.picture then
 			print(v.u_transition.picture)
-			v.u_transition.picture = string.gsub(v.u_transition.picture, "__base__", "__WaiTex__")
+			v.u_transition.picture = string.gsub(v.u_transition.picture, "__base__", MOD_NAME)
 		end
 	end
 	if v.o_transition then
 		if v.o_transition.picture then
 			print(v.o_transition.picture)
-			v.o_transition.picture = string.gsub(v.o_transition.picture, "__base__", "__WaiTex__")
+			v.o_transition.picture = string.gsub(v.o_transition.picture, "__base__", MOD_NAME)
 		end
 	end
 	end
@@ -1281,7 +1419,7 @@ end
 for k, v in pairs(data.raw.technology) do
 	if IsBase(v.icon) then
 		print(v.icon)
-		v.icon = string.gsub(v.icon, "__base__", "__WaiTex__")
+		v.icon = string.gsub(v.icon, "__base__", MOD_NAME)
 	end
 end
 ]]--
@@ -1296,7 +1434,7 @@ if AllowChange("tree") then
 					if IsBase(filename) then
 						OverrideSprite(treeVariations.leaves)
 						filename = string.gsub(filename, ".png", "") -- not good to have it here... oh well
-						filename = string.gsub(filename, "__base__", "__WaiTex__")
+						filename = string.gsub(filename, "__base__", MOD_NAME)
 					
 						AddStripes(treeVariations.trunk, nil, nil, 
 						{
