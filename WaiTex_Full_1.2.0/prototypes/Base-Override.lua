@@ -343,6 +343,41 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/combinator/combinator-led-decider-west.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
+	--[[connector]]--
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-h.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-ne.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-nw.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-se.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-sw.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-v.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-x.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-shadow-h.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-shadow-ne.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-shadow-nw.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-shadow-se.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-shadow-sw.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-shadow-v.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-shadow-x.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-scanner.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-scanner-nw-ne.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/transport-belt/connector/transport-belt-connector-frame-main-scanner-sw-se.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
+	--[[circuit-connector]]--
+	["__base__/graphics/entity/circuit-connector/circuit-connector-main.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-led-red.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-led-green.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-led-blue.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-logistic-animation.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-inserter-main.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-inserter-shadow.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-inserter-led-red.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-inserter-led-green.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-inserter-led-blue.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/circuit-connector/circuit-connector-logistic-animation.png"] = function(t)  OverrideSprite(t[#t]) end,
+	
+	
 	--[[crude-oil]]--
 	["__base__/graphics/entity/crude-oil/crude-oil.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
@@ -461,9 +496,8 @@ local ChangeTextureConfiguration =
 	end,
 	
 	
-	--[[express-transport-belt-to-ground]]--
-	["__base__/graphics/entity/express-transport-belt-to-ground/express-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/express-transport-belt-to-ground/express-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--[[express-underground-belt]]--
+	["__base__/graphics/entity/express-underground-belt/express-underground-belt-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[explosion]]--
@@ -582,8 +616,7 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[fast-transport-belt-to-ground]]--
-	["__base__/graphics/entity/fast-transport-belt-to-ground/fast-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/fast-transport-belt-to-ground/fast-transport-belt-to-ground-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
+	["__base__/graphics/entity/fast-underground-belt/fast-underground-belt-structure.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[gate]]--

@@ -10,13 +10,13 @@ local TexturePermissions =
 	["assembling-machine-1"] = 				{["enabled"] = true, ["requiredGB"] = 1},
 	["assembling-machine-2"] = 				{["enabled"] = true, ["requiredGB"] = 1},
 	["assembling-machine-3"] = 				{["enabled"] = true, ["requiredGB"] = 1},
-	["basic-beacon"] = 						{["enabled"] = true, ["requiredGB"] = 1},
-	["basic-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1},
-	["basic-mining-drill"] = 				{["enabled"] = true, ["requiredGB"] = 1},
-	["basic-splitter"] = 					{["enabled"] = true, ["requiredGB"] = 1},
-	["basic-transport-belt"] = 				{["enabled"] = true, ["requiredGB"] = 1},
-	["basic-transport-belt-to-ground"] = 	{["enabled"] = true, ["requiredGB"] = 1},
-	["basic-accumulator"] = 				{["enabled"] = true, ["requiredGB"] = 1},
+	["beacon"] = 							{["enabled"] = true, ["requiredGB"] = 1},
+	["inserter"] = 							{["enabled"] = true, ["requiredGB"] = 1},
+	["electric-mining-drill"] = 			{["enabled"] = true, ["requiredGB"] = 1},
+	["splitter"] = 							{["enabled"] = true, ["requiredGB"] = 1},
+	["transport-belt"] = 					{["enabled"] = true, ["requiredGB"] = 1},
+	["transport-belt-to-ground"] = 			{["enabled"] = true, ["requiredGB"] = 1},
+	["accumulator"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["beam"] = 								{["enabled"] = true, ["requiredGB"] = 3}, --1GB 
 	["blood-particle"] = 					{["enabled"] = false,["requiredGB"] = 3}, --1GB  
 	["blue-laser"] = 						{["enabled"] = false,["requiredGB"] = 3}, --1GB  
@@ -26,7 +26,7 @@ local TexturePermissions =
 	["burner-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["burner-mining-drill"] = 				{["enabled"] = true, ["requiredGB"] = 1},
 	["car"] = 								{["enabled"] = true, ["requiredGB"] = 2}, --1GB
-	["cargo-wagon"] = 						{["enabled"] = true, ["requiredGB"] = 2}, --1GB --UPDATED
+	["cargo-wagon"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB --UPDATED
 	["chemical-plant"] = 					{["enabled"] = true, ["requiredGB"] = 1}, 
 	["coal"] = 								{["enabled"] = true, ["requiredGB"] = 1},
 	["coal-particle"] = 					{["enabled"] = false,["requiredGB"] = 3}, --1GB  
@@ -39,15 +39,15 @@ local TexturePermissions =
 	["copper-ore"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["curved-rail"] = 						{["enabled"] = true, ["requiredGB"] = 1},  
 	["decorative"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
-	["diesel-locomotive"] = 				{["enabled"] = true, ["requiredGB"] = 2}, --1GB --UPDATED
+	["diesel-locomotive"] = 				{["enabled"] = true, ["requiredGB"] = 3}, --1GB --UPDATED
 	["electric-furnace"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["express-splitter"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["express-transport-belt"] =		 	{["enabled"] = true, ["requiredGB"] = 1}, 
 	["express-transport-belt-to-ground"] = 	{["enabled"] = true, ["requiredGB"] = 1},
-	["explosion"] = 						{["enabled"] = true, ["requiredGB"] = 2}, --1GB  
-	["explosion-gunshot"] = 				{["enabled"] = true, ["requiredGB"] = 2}, --1GB  
-	["explosion-hit"] = 					{["enabled"] = true, ["requiredGB"] = 2}, --1GB  
-	["explosive-rocket"] = 					{["enabled"] = true, ["requiredGB"] = 2}, --1GB  
+	["explosion"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
+	["explosion-gunshot"] = 				{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
+	["explosion-hit"] = 					{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
+	["explosive-rocket"] = 					{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
 	["fast-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, 
 	["filter-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, --NEW
 	["stack-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, --NEW
@@ -56,14 +56,6 @@ local TexturePermissions =
 	["fast-transport-belt"] =			 	{["enabled"] = true, ["requiredGB"] = 1}, 
 	["fast-transport-belt-to-ground"] = 	{["enabled"] = true, ["requiredGB"] = 1},
 	["filter-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, --NEW
-	["fire"] = 								{["enabled"] = true, ["requiredGB"] = 3}, --NEW
-	["fire-flame"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
-	["fire-smoke"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
-	["firesmoke"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
-	["stream"] = 							{["enabled"] = true, ["requiredGB"] = 3}, --NEW
-	["flame-thrower-explosion"] = 			{["enabled"] = true, ["requiredGB"] = 3}, 
-	["flamethrower-fire-stream"] = 			{["enabled"] = true, ["requiredGB"] = 3}, --NEW
-	["flamethrower-turret"] = 				{["enabled"] = true, ["requiredGB"] = 2}, --NEW
 	["gate"] = 								{["enabled"] = true, ["requiredGB"] = 1},
 	["gun-turret"] = 						{["enabled"] = true, ["requiredGB"] = 1}, 
 	["iron-chest"] = 						{["enabled"] = true, ["requiredGB"] = 1},
@@ -86,21 +78,21 @@ local TexturePermissions =
 	["pipe-covers"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["pipe-to-ground"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["power-switch"] = 						{["enabled"] = true, ["requiredGB"] = 1}, --NEW
-	["pumpjack"] = 							{["enabled"] = true, ["requiredGB"] = 2},
+	["pumpjack"] = 							{["enabled"] = true, ["requiredGB"] = 3},
 	["radar"] = 							{["enabled"] = true, ["requiredGB"] = 1},
 	["rail-chain-signal"] = 				{["enabled"] = true, ["requiredGB"] = 1},
 	["remnants"] = 							{["enabled"] = true, ["requiredGB"] = 3},  
-	["player"] = 							{["enabled"] = true, ["requiredGB"] = 2}, --cropcache.dat --1GB 
+	["player"] = 							{["enabled"] = true, ["requiredGB"] = 3}, --cropcache.dat --1GB 
 	["rail-signal"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["roboport"] = 							{["enabled"] = true, ["requiredGB"] = 1},
 	["rocket-silo"] = 						{["enabled"] = true, ["requiredGB"] = 2}, --1GB
-	["rocket-silo-rocket"] = 				{["enabled"] = true, ["requiredGB"] = 2}, --1GB
+	["rocket-silo-rocket"] = 				{["enabled"] = true, ["requiredGB"] = 3}, --1GB
 	["small-electric-pole"] = 				{["enabled"] = true, ["requiredGB"] = 1},
 	["small-lamp"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["small-pump"] = 						{["enabled"] = true, ["requiredGB"] = 1}, 
-	["scorchmark"] = 						{["enabled"] = true, ["requiredGB"] = 2}, --1GB  
+	["scorchmark"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
 	["slowdown-sticker"] = 					{["enabled"] = true, ["requiredGB"] = 3},  
-	["ship-wreck"] = 						{["enabled"] = true, ["requiredGB"] = 2}, --1GB  
+	["ship-wreck"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
 	["smart-chest"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["smart-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, 
 	["solar-panel"] = 						{["enabled"] = true, ["requiredGB"] = 1},
@@ -120,11 +112,31 @@ local TexturePermissions =
 	["storage-tank"] = 						{["enabled"] = true, ["requiredGB"] = 1}, 
 	["straight-rail"] = 					{["enabled"] = true, ["requiredGB"] = 1},    
 	["substation"] = 						{["enabled"] = true, ["requiredGB"] = 1},
-	["tank"] = 								{["enabled"] = true, ["requiredGB"] = 2}, --1GB
+	["tank"] = 								{["enabled"] = true, ["requiredGB"] = 3}, --1GB
 	["train-stop"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["tree"] = 								{["enabled"] = true, ["requiredGB"] = 3}, --1GB 
 	["water-splash"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
 	["wooden-chest"] = 						{["enabled"] = true, ["requiredGB"] = 1},
+	
+	--fire and smoke
+	["fire-flame"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-flame-on-tree"] = 				{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-smoke-without-glow"] = 			{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-smoke-without-glow"] = 			{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["soft-fire-smoke"] = 					{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-smoke-on-adding-fuel"] = 		{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-sticker"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["handheld-flamethrower-fire-stream"] = {["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-flame"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-flame"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-flame"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["sticker"] = 	--[[fire]]				{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-flame"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fire-smoke"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["stream"] = 							{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["flame-thrower-explosion"] = 			{["enabled"] = true, ["requiredGB"] = 3}, 
+	["flamethrower-fire-stream"] = 			{["enabled"] = true, ["requiredGB"] = 3}, --NEW
+	["fluid-turret"] = 						{["enabled"] = true, ["requiredGB"] = 2}, --NEW
 	
 	--biters
 	["small-biter"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB 
