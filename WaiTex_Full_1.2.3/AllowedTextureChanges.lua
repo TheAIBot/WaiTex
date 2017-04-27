@@ -17,52 +17,52 @@ local TexturePermissions =
 	["transport-belt"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["transport-belt-to-ground"] = 			{["enabled"] = true, ["requiredGB"] = 1},
 	["accumulator"] = 						{["enabled"] = true, ["requiredGB"] = 1},
-	["beam"] = 								{["enabled"] = true, ["requiredGB"] = 3}, --1GB 
-	["blood-particle"] = 					{["enabled"] = false,["requiredGB"] = 3}, --1GB  
-	["blue-laser"] = 						{["enabled"] = false,["requiredGB"] = 3}, --1GB  
-	["branch-particle"] = 					{["enabled"] = false,["requiredGB"] = 3}, --1GB  
+	["beam"] = 								{["enabled"] = true, ["requiredGB"] = 3},  
+	["blood-particle"] = 					{["enabled"] = false,["requiredGB"] = 3},  
+	["blue-laser"] = 						{["enabled"] = false,["requiredGB"] = 3},   
+	["branch-particle"] = 					{["enabled"] = false,["requiredGB"] = 3},  
 	["big-electric-pole"] = 				{["enabled"] = true, ["requiredGB"] = 1},
 	["boiler"] = 							{["enabled"] = false,["requiredGB"] = 1},  --WIP
 	["burner-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["burner-mining-drill"] = 				{["enabled"] = true, ["requiredGB"] = 1},
-	["car"] = 								{["enabled"] = true, ["requiredGB"] = 2}, --1GB
-	["cargo-wagon"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB --UPDATED
+	["car"] = 								{["enabled"] = true, ["requiredGB"] = 2}, 
+	["cargo-wagon"] = 						{["enabled"] = false,["requiredGB"] = 3}, 
 	["chemical-plant"] = 					{["enabled"] = true, ["requiredGB"] = 1}, 
 	["coal"] = 								{["enabled"] = true, ["requiredGB"] = 1},
-	["coal-particle"] = 					{["enabled"] = false,["requiredGB"] = 3}, --1GB  
-	["copper-ore-particle"] = 				{["enabled"] = false,["requiredGB"] = 3}, --1GB  
+	["coal-particle"] = 					{["enabled"] = false,["requiredGB"] = 3},   
+	["copper-ore-particle"] = 				{["enabled"] = false,["requiredGB"] = 3},   
 	["crude-oil"] = 						{["enabled"] = true, ["requiredGB"] = 1},  
 	["defender"] = 							{["enabled"] = true, ["requiredGB"] = 1},
-	["destroyer"] = 						{["enabled"] = true, ["requiredGB"] = 1}, --UPDATED
+	["destroyer"] = 						{["enabled"] = true, ["requiredGB"] = 1}, 
 	["distractor"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["construction-robot"] = 				{["enabled"] = true, ["requiredGB"] = 1},
 	["copper-ore"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["curved-rail"] = 						{["enabled"] = true, ["requiredGB"] = 1},  
-	["decorative"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
-	["diesel-locomotive"] = 				{["enabled"] = true, ["requiredGB"] = 3}, --1GB --UPDATED
+	["decorative"] = 						{["enabled"] = true, ["requiredGB"] = 3},   
+	["diesel-locomotive"] = 				{["enabled"] = false,["requiredGB"] = 3}, 
 	["electric-furnace"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["express-splitter"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["express-transport-belt"] =		 	{["enabled"] = true, ["requiredGB"] = 1}, 
 	["express-transport-belt-to-ground"] = 	{["enabled"] = true, ["requiredGB"] = 1},
-	["explosion"] = 						{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
-	["explosion-gunshot"] = 				{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
-	["explosion-hit"] = 					{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
-	["explosive-rocket"] = 					{["enabled"] = true, ["requiredGB"] = 3}, --1GB  
+	["explosion"] = 						{["enabled"] = true, ["requiredGB"] = 3}, 
+	["explosion-gunshot"] = 				{["enabled"] = true, ["requiredGB"] = 3}, 
+	["explosion-hit"] = 					{["enabled"] = true, ["requiredGB"] = 3}, 
+	["explosive-rocket"] = 					{["enabled"] = true, ["requiredGB"] = 3}, 
 	["fast-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, 
-	["filter-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, --NEW
-	["stack-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, --NEW
-	["stack-filter-inserter"] = 			{["enabled"] = true, ["requiredGB"] = 1}, --NEW
+	["filter-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, 
+	["stack-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, 
+	["stack-filter-inserter"] = 			{["enabled"] = true, ["requiredGB"] = 1}, 
 	["fast-splitter"] = 					{["enabled"] = true, ["requiredGB"] = 1},
 	["fast-transport-belt"] =			 	{["enabled"] = true, ["requiredGB"] = 1}, 
 	["fast-transport-belt-to-ground"] = 	{["enabled"] = true, ["requiredGB"] = 1},
-	["filter-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, --NEW
+	["filter-inserter"] = 					{["enabled"] = true, ["requiredGB"] = 1}, 
 	["gate"] = 								{["enabled"] = true, ["requiredGB"] = 1},
 	["gun-turret"] = 						{["enabled"] = true, ["requiredGB"] = 1}, 
 	["iron-chest"] = 						{["enabled"] = true, ["requiredGB"] = 1},
 	["iron-ore"] = 							{["enabled"] = true, ["requiredGB"] = 1},
 	["lab"] = 								{["enabled"] = true, ["requiredGB"] = 1},
 	["land-mine"] = 						{["enabled"] = true, ["requiredGB"] = 1},  
-	["laser-turret"] = 						{["enabled"] = true, ["requiredGB"] = 2}, --1GB 
+	["laser-turret"] = 						{["enabled"] = true, ["requiredGB"] = 2},  
 	["logistic-chest-passive-provider"] = 	{["enabled"] = true, ["requiredGB"] = 1},
 	["logistic-chest-active-provider"] = 	{["enabled"] = true, ["requiredGB"] = 1},
 	["logistic-chest-storage"] = 			{["enabled"] = true, ["requiredGB"] = 1},

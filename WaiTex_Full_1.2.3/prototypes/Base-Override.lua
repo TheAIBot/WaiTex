@@ -281,25 +281,27 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[cargo-wagon]]--
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-1.png"] = function(t)
-		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/cargo-wagon/cargo-wagon/cargo-wagon-&/cargo-wagon-&-", ".png")
-	end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-mask-1.png"] = function(t)
-		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/cargo-wagon/cargo-wagon-mask/cargo-wagon-mask-&/cargo-wagon-mask-&-", ".png")
-	end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-shadow-1.png"] = function(t)
-		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/cargo-wagon/cargo-wagon-shadow/cargo-wagon-shadow-&/cargo-wagon-shadow-&-", ".png")
-	end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-end.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-side.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-side-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-top.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-top-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-end.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-side.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-side-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-top.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-top-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-1.png"]                         = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-2.png"]                         = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-3.png"]                         = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-4.png"]                         = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-mask-1.png"]                    = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-mask-2.png"]                    = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-mask-3.png"]                    = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-shadow-1.png"]                  = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-shadow-2.png"]                  = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-shadow-3.png"]				   = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-shadow-4.png"]				   = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-end.png"]       = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-side.png"]      = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-side-mask.png"] = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-top.png"]       = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-horizontal-top-mask.png"]  = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-end.png"]         = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-side.png"]        = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-side-mask.png"]   = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-top.png"]         = function(t)  OverrideSprite(t[#t]) end,
+	--["__base__/graphics/entity/cargo-wagon/cargo-wagon-door-vertical-top-mask.png"]    = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[chemical-plant]]--
@@ -449,18 +451,18 @@ local ChangeTextureConfiguration =
 	
 	
 	--[[diesel-locomotive]]--
-	["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-01.png"] = function(t)
-		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive/diesel-locomotive-0&/diesel-locomotive-0&-", ".png")
-	end,
-	["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-01.png"] = function(t)
-		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive-mask/diesel-locomotive-mask-0&/diesel-locomotive-mask-0&-", ".png")
-	end,
-	["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-01.png"] = function(t)
-		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive-shadow/diesel-locomotive-shadow-0&/diesel-locomotive-shadow-0&-", ".png")
-	end,
-	["__base__/graphics/entity/diesel-locomotive/train-wheels-01.png"] = function(t)
-		TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/train-wheels/train-wheels-0&/train-wheels-0&-", ".png")
-	end,
+	--["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-01.png"] = function(t)
+	--	TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive/diesel-locomotive-0&/diesel-locomotive-0&-", ".png")
+	--end,
+	--["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-01.png"] = function(t)
+	--	TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive-mask/diesel-locomotive-mask-0&/diesel-locomotive-mask-0&-", ".png")
+	--end,
+	--["__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-01.png"] = function(t)
+	--	TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/diesel-locomotive-shadow/diesel-locomotive-shadow-0&/diesel-locomotive-shadow-0&-", ".png")
+	--end,
+	--["__base__/graphics/entity/diesel-locomotive/train-wheels-01.png"] = function(t)
+	--	TextureToSpritesConverter(t[#t - 1], MOD_NAME.."/graphics/entity/diesel-locomotive/train-wheels/train-wheels-0&/train-wheels-0&-", ".png")
+	--end,
 	
 	--[[electric-furnace]]--
 	["__base__/graphics/entity/electric-furnace/electric-furnace-base.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -1382,7 +1384,7 @@ function RecursiveOverrideBaseTextures(t)
 				ChangeTextureConfiguration[v](t)
 				return true
 			end
-		elseif type(v) == "table" then
+		elseif type(v) == "table" and v.hr_version == nil then
 			local index = #t + 1
 			t[index] = v
 			RecursiveOverrideBaseTextures(t)
