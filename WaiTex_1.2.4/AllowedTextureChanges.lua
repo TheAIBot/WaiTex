@@ -1,7 +1,7 @@
 --Allowed textures to change
 
 local AvailableGB = 3
-MOD_NAME = "__WaiTex_Full__"
+MOD_NAME = "__WaiTex__"
 --MOD_NAME = "__WaiTex_2GB__"
 --MOD_NAME = "__WaiTex_1GB__"
 
