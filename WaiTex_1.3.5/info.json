@@ -1,10 +1,10 @@
 {
 	"name":"WaiTex",
 	"author":"keyboardhack",
-	"version":"1.2.4",
+	"version":"1.3.5",
 	"title":"WaiTex",
 	"homepage":"http://www.factorioforums.com/forum/viewtopic.php?f=144&t=13142",
 	"description":"HD textures for the remaining vanilla items",
 	"dependencies": ["base >= 0.13.00"],
-	"factorio_version": "0.16"
+	"factorio_version": "0.17"
 }

@@ -138,22 +138,6 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/beam/beam-body-6.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[blood-particle]]--
-	["__base__/graphics/entity/blood-particle/blood-particle-01.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-02.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-03.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-04.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-05.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-06.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-07.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-08.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-09.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-10.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-11.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-12.png"] = function(t)  OverrideSprite(t[#t]) end,
-	["__base__/graphics/entity/blood-particle/blood-particle-13.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
 	--[[blue-laser]]--
 	["__base__/graphics/entity/blue-laser/blue-laser.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
@@ -700,10 +684,6 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/stack-filter-inserter/stack-filter-inserter-platform.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
-	--[[iron-chest]]--
-	["__base__/graphics/entity/iron-chest/iron-chest.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
 	--[[iron-ore]]--
 	["__base__/graphics/entity/iron-ore/iron-ore.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
@@ -734,22 +714,6 @@ local ChangeTextureConfiguration =
 	["__base__/graphics/entity/laser-turret/laser-turret-base.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/laser-turret/laser-turret-gun.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/laser-turret/laser-turret-gun-start.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
-	--[[logistic-chest-passive-provider]]--
-	["__base__/graphics/entity/logistic-chest/logistic-chest-passive-provider.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
-	--[[logistic-chest-active-provider]]--
-	["__base__/graphics/entity/logistic-chest/logistic-chest-active-provider.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
-	--[[logistic-chest-storage]]--
-	["__base__/graphics/entity/logistic-chest/logistic-chest-storage.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
-	--[[logistic-chest-requester]]--
-	["__base__/graphics/entity/logistic-chest/logistic-chest-requester.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[logistic-robot]]--
@@ -1162,10 +1126,6 @@ local ChangeTextureConfiguration =
 	end,
 	
 	
-	--[[steel-chest]]--
-	["__base__/graphics/entity/steel-chest/steel-chest.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
 	--[[steel-furnace]]--
 	["__base__/graphics/entity/steel-furnace/steel-furnace.png"] = function(t)  OverrideSprite(t[#t]) end,
 	["__base__/graphics/entity/steel-furnace/steel-furnace-fire.png"] = function(t)  OverrideSprite(t[#t]) end,
@@ -1291,10 +1251,6 @@ local ChangeTextureConfiguration =
 	
 	--[[water-splash]]--
 	["__base__/graphics/entity/water-splash/water-splash.png"] = function(t)  OverrideSprite(t[#t]) end,
-	
-	
-	--[[wooden-chest]]--
-	["__base__/graphics/entity/wooden-chest/wooden-chest.png"] = function(t)  OverrideSprite(t[#t]) end,
 	
 	
 	--[[worm]]--
